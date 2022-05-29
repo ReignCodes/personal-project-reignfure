@@ -1,0 +1,182 @@
+
+<%- include('../partials/header') -%> 
+    
+<%- include('../partials/nav') -%>
+<main>
+    <div class="testbox">
+        <form action="/">
+          <div class="banner">
+            <h1>Resource Submission Form</h1>
+          </div>
+          <h2>Are we missing an important resourced? Please tell us about it!</h2>
+          <div class="item">
+            <label for="name">Name of Resource</label><span class="required">*</span>
+            <input type="text" name="name" id="name" minlength="5" required/>
+          </div>
+          <div class="item">
+            <label for="type">Resource Type</label><span class="required">*</span>
+            <select required>
+                <option value="">What kind of resource is this?</option>
+                <option value="1">Community Fridge & Pantry</option>
+                <option value="2">Micro Pantry (no fridge)</option>
+                <option value="3">Food Bank Pick-up</option>
+                <option value="4">Prepared Meal Pick-up</option>
+                <option value="5">Sit-down warm meal</option>
+                <option value="6">Warming Center</option>
+                <option value="7">Shelter</option>
+            </select>
+          </div>
+          <h5>1. Resource Details:</h5>
+          <div class="item">
+            <label for="org">Name of Lead Orginazation</label>
+            <input type="text" name="org"/>
+          </div>
+          <div class="item">
+            <label for="date">Date Resource Opened</label><span class="required">*</span>
+            <input type="date" name="bdate"/>
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="item">
+            <label for="address">Resource Address</label><span class="required">*</span></p>
+            <input type="text" name="address" placeholder="Street address" required/>
+            <input type="text" name="locDescription" placeholder="Description of location of resource; ie: around the side of the building." required/>
+            <div class="city-item">
+              <input type="text" name="city" placeholder="City" required/>
+              <input type="text" name="county" placeholder="County/Region"/>
+              <input type="text" name="zip" placeholder="Postal / Zip code" required/>
+              <select name="country" required>
+                <option value="">Country</option>
+                <option value="1">USA</option>
+                <option value="2">Canada</option>
+              </select>
+            </div>
+          </div>
+          <div class="item">
+          <label for="website">Website</label><span class="required">*</span></p>
+            <input type="url" name="website" placeholder="Provide somewhere we can find this resource online" required/>
+          </div>
+          <div class="item">
+            <label for="facebook">Facebook URL</label>
+            <input type="url" name="facebook"/>
+          </div>
+          <div class="item">
+            <label for="insta">Instagram URL</label>
+            <input type="url" name="instagram"/>
+          </div>
+          <div class="item">
+            <label for="email">Email</label>
+            <input type="email" name="email"/>
+          </div>
+          <div class="question">
+            <label for="openHours">Is this resource open 24/7?</label><span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_1" name="openHours" required/>
+              <label for="radio_1" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_2" name="openHours" required/>
+              <label for="radio_2" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="item">
+            <label for='days'>If No, please list the Hours of Operation below:</label>
+            <div class="city-item">
+              <input type="text" name="days" placeholder="Days open">
+              <input type="text" name="hours" placeholder="Hours">
+              <input type="text" name="days" placeholder="Days open">
+              <input type="text" name="hours" placeholder="Hours">
+            </div>
+          </div>
+          <div class="question">
+            <label for='days'>Does this resource accept donations?</label><span class="required">*</span>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_3" name="donations" required/>
+              <label for="radio_3" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_4" name="donations" required/>
+              <label for="radio_4" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <p>What kind of donations does this resource accept?<span class="required">*</span></p>
+            <div class="question-answer checkbox-item" name="accepts">
+              <div>
+                <input type="checkbox" value="Fresh produce" id="check_1" name="accepts" required/>
+                <label for="check_1" class="check"><span>Fresh produce</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Fresh dairy/eggs" id="check_2" name="accepts" required/>
+                <label for="check_2" class="check"><span>Fresh dairy/eggs</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Sealed Canned/jarred food" id="check_3" name="accepts" required/>
+                <label for="check_3" class="check"><span>Sealed Canned/jarred food</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Sealed Canned/jarred food" id="check_4" name="accepts" required/>
+                <label for="check_4" class="check"><span>Sealed packaged/labeled pre-made food</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Sealed frozen food" id="check_5" name="accepts" required/>
+                <label for="check_5" class="check"><span>Sealed frozen food</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Sealed packaged/labeled baked goods" id="check_6" name="accepts_packaged" required/>
+                <label for="check_5" class="check"><span>Sealed packaged/labeled baked goods</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="New hygiene products" id="check_7" name="checklist" required/>
+                <label for="check_6" class="check"><span>New hygiene products</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Sealed disposable plates/cups/utensils" id="check_8" name="checklist" required/>
+                <label for="check_7" class="check"><span>Sealed disposable plates/cups/utensils</span></label>
+              </div>
+              <div>
+                <input type="checkbox" value="Clothing" id="check_9" name="checklist" required/>
+                <label for="check_7" class="check"><span>Clothing</span></label>
+              </div>
+            </div>
+          </div>
+            <div class="question">
+                <p>What kind of donations does this resource NOT accept?<span class="required">*</span></p>
+                <div class="question-answer checkbox-item" name="NOT_accept">
+                  <div>
+                    <input type="checkbox" value="Raw meat" id="check_10" name="checklist" required/>
+                    <label for="check_1" class="check"><span>Raw meat</span></label>
+                  </div>
+                  <div>
+                    <input type="checkbox" value="Homemade food" id="check_11" name="checklist" required/>
+                    <label for="check_2" class="check"><span>Homemade food</span></label>
+                  </div>
+                  <div>
+                    <input type="checkbox" value="Dairy" id="check_12" name="checklist" required/>
+                    <label for="check_3" class="check"><span>Dairy</span></label>
+                  </div>
+                  <div>
+                    <input type="checkbox" value="Hygiene products" id="check_13" name="checklist" required/>
+                    <label for="check_4" class="check"><span>Hygiene products</span></label>
+                  </div>
+                  <div>
+                    <input type="checkbox" value="Clothing" id="check_14" name="checklist" required/>
+                    <label for="check_5" class="check"><span>Clothing</span></label>
+                  </div>
+                </div>
+            </div>   
+            <div class="question" name="volunteer">
+            <label for='days'>Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="radio_3" name="volunteer" required/>
+              <label for="radio_3" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="radio_4" name="volunteer" required/>
+              <label for="radio_4" class="radio"><span>No</span></label>
+            </div>
+          </div>
+            <div class="item">
+                <label for="contact">Enter your contact email:</label>
+                <input type="email" name="contact"> 
+            </div>
+            <div class="btn-block">
+              <button type="submit" href="/">Submit</button>
+            </div>
+        </form>
+        </div>
+</main>
+    <%- include('../partials/footer') -%>
