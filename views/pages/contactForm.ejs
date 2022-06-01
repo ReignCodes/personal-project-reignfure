@@ -1,4 +1,34 @@
 <%- include('../partials/header') -%> 
-    
 <%- include('../partials/nav') -%>
+<div class="container">
+    <div class="formContainer">
+      <form action="/admin/volunteer">
+        <div class="formItem">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name..">
+        </div>
+        <div class="formItem">
+          <label for="org">Organization</label>
+          <input type="text" id="org" name="org" placeholder="Your organization..">
+        </div>
+        <div class="formItem">
+          <label for="email">Enter your contact email:</label>
+          <input type="email" name="email" placeholder="Your email.."> 
+        </div>
+        <div class="formItem">
+          <label for="volunteer">Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
+          <input type="radio" value="true" id="yesVol" name="volunteer" required/>
+          <label for="yesVol" class="radio">Yes</label>
+          <input type="radio" value="false" id="noVol" name="volunteer" required/>
+          <label for="noVol" class="radio">No</label>
+        </div>
+        <div class="formItem">
+          <label for="subject">Message</label>
+          <textarea class="formTextBox" id="subject" name="subject" placeholder="What do you want us to know?"></textarea>
+        </div>
+        <button class="formSubmitBtn" type="submit" value="Submit">Submit!</button>
+      </form>
+    </div>
+  </div>   
+
 <%- include('../partials/footer') -%>

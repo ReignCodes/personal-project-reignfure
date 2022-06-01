@@ -1,34 +1,33 @@
 <%- include('../partials/header') -%> 
     
 <%- include('../partials/nav') -%>
-     <div class="indexContainer">
+     <div class="container">
         <h1>The Fridge Project</h1>
-        <div class="indexContent">
-            <div class="indexText">
-                <div class="indexSection">
+        <div class="content">
+            <div class="mainTextContainer">
+                <div class="mainTextSection">
                 <p> At The Fridge Project we aim to make it easier for people to find the community resources available to them.  Here we want to help build a community around mutual aid.  A place where people can find and add places for people in need to find free food, meals, and other kinds of help.  </p>
                 </div>
+                <div class="textSection">
                 <h1>What are you looking for?</h1>
-                <div class="indexSection">
-                <h2>Fridges & Pantries</h2>
-                <p>Here we list local fridges and pantries as well as allow people to update when they were last filled/if they need food</p>
+                <div class="textSection">
+                <a class="pageLink"><h2>Fridges & Pantries</h2></a>
+                    <p class="dropDownInfo">Here we list local fridges and pantries as well as allow people to update when they were last filled/if they need food</p>
                 </div>
-                <div class="indexSection">
-                <h2>Food Banks, Soup Kitchens, and Prepared Meals</h2>
-                <p>Here we list local places that provide home made meals for take away or dining on site as well as local food banks</p>
+                <div class="textSection">
+                    <a class="pageLink"><h2>Food Banks, Soup Kitchens, and Prepared Meals</h2></a>
+                    <p class="dropDownInfo">Here we list local places that provide home made meals for take away or dining on site as well as local food banks</p>
                 </div>
-                <div class="indexSection">
-                <h2>Warming Centers and Shelters</h2>
-                <p>Here we provide locations, contact info, and other details for local warming centers and shelters</p>
+                <div class="textSection">
+                    <a class="pageLink"><h2>Warming Centers and Shelters</h2></a>
+                    <p class="dropDownInfo">Here we provide locations, contact info, and other details for local warming centers and shelters</p>
                 </div>
-                <div>
-                    <a>SUBMIT A RESOURCE!</a>
+                <div class="textSection">
+                    <p>Feel like we are missing something?</p>
+                    <a class="pageLink" href="./submitResourceForm.ejs">submit a resource!</a>
+                    <p>Want to volunteer as an admin for this page?</p>
+                    <a class="pageLink" href="./contactForm.ejs">contact us!</a>
                 </div>
-                <!-- <h2>The Calendar</h2>
-                <p>This calendar will be updated monthly and keep track of local mutual aid events, food pantry and soup kitchen dates and times, and other important mutual aid information</p> -->
-            </div>
-            <div class="indexPhoto">
-            <img id="fridge1" src="./images/Watertown-Fridge.png" alt="Picture of Watertown Community Fridge" width=500px height=auto/>
             </div>
         </div>
     </div>

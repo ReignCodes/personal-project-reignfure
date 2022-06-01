@@ -1,0 +1,17 @@
+   <div class="adminResource" id = "adminResource">
+      <table class="adminResource">
+          <tr>
+              <th>Resource</th>
+              <th>Type</th>
+              <th>Is Approved?</th>
+              <th>Review</th>
+              <th>Delete</th>
+          </tr>
+       
+          <% data.forEach(resource => { %>
+            <%- include('../partials/resource', {resource: resource}) -%>
+                    <% }); %>
+          
+        
+      </table>
+  </div>

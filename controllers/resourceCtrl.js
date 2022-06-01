@@ -1,32 +1,49 @@
-const fridge = require('../models/fridgeModel');
+const resource = require('../models/resourceModel');
 
 module.exports = {
-  create: (req, res) => {
-      const {name, type, organization, start_date, street_address, city, state, county, zip, country, loc_description, openHours, hours, days, website, email, description, image} = req.body;
+  createVolunteer: (req,res) => {
+      const {
+
+      }
+  },
+  createResource: (req, res) => {
+      const {name, type, org, start_date, google_maps, coords, st_add, city, state, county, zip, country, loc_desc, opnHrs, hrs, days, web, email, facebook, insta, linktree, frz, pantry, donations, accpt, no_accpt, dtls, img} = req.body;
       const newResource = new ({
         name: name,
         type: type,
-        organization: organization,
+        org: org,
         start_date: start_date,
-        street_address: street_address,
+        google_maps: google_maps,
+        coords: coords,
+        st_add: st_add,
         city: city,
         state: state,
         county: county,
         zip: zip,
+        county: county,
         country: country,
-        loc_description: loc_description,
-        openHours: openHours,
-        hours: hours,
+        loc_desc: loc_desc,
+        opnHrs: opnHrs,
         days: days,
-        website: website,
+        hrs: hrs,
+        web: web,
         email: email,
-        description: description,
-        image: image
+        facebook: facebook,
+        insta: insta,
+        linktree: linktree,
+        frz: frz,
+        pantry: pantry,
+        donations: donations,
+        accpt: accpt,
+        no_accpt: no_accpt,
+        dtls: dtls,
+        img: img
       });
-      newResources.save();
-      if (title != "") {
-          res.redirect("/admin-console"); 
+
+      newResource.save();
+      if (name != "") {
+          res.redirect("/adminConsole"); 
       } else {
-          res.redirect("/admin-console/create-comic");
-      } 
-    }
+          res.redirect("/adminConsole/createResource");
+      };
+  }

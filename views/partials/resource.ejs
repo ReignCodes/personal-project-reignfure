@@ -1,0 +1,12 @@
+<tr>
+    <td><%= resource.name %> </td>
+    <td><%= resource.type %> </td>
+    <td><%= resource.isApproved %></td>
+    <td>  <button class="review-button"><a href="/admin/approve/<%= resource._id %>">Review</a></button>
+    </td>
+    <td>
+        <form action="/admin/approve/<%= resource._id %>?_method=DELETE" method="POST">
+       <button class="review-button" type="submit">Delete</button>
+        </form> 
+    </td>
+ </tr>

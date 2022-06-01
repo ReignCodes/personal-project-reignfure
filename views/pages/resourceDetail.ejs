@@ -1,4 +1,34 @@
 <%- include('../partials/header') -%> 
-    
+<div class="contentContainer">
+    <h1>Resource Details</h1>
+    <div class="containerImage">
+    <img class="resourceImage" src="/images/<%= resource.image %>"  width="400px" />
+    </div>
+    <div class="containerText">
+        <div class="resourceInfo">
+            <p>Name: <%= resource.name %></p>
+            <p>Type: <%= resource.type %></p>
+            <p>Organization: <%= resource.organization %></p>
+            <h2>social media</h2>
+            <p>Website:<%= resource.website %></p>
+            <p>Facebook:<%= resource.facebook %></p>
+            <p>Instagram:<%= resource.instagram %></p>
+            <p>Linktree:<%= resource.linktree %></p>
+            <h2>resource details</h2>
+            <p>Start Date: <%= resource.start_date %></p>
+            <p>Google Maps Link: <%= resource.google_maps %></p>
+            <p><%= resource.street_address %></p>
+            <p><%= resource.city %>, <%= resource.state %> <%= resource.zip %> <%= resource.country %></p>
+            <p>Location Description: <%= resource.loc_description %></p>
+            <p>open 24 hours? <%= resource.openHours %></p>
+            <p>Days: <%= resource.days %></p>
+            <p>Hours: <%= resource.hours %></p>
+            <p>Freezer: <%= resource.freezer %></p>
+            <p>Pantry: <%= resource.pantry %></p>
+            <p>Accepts: <%= resource.accept %></p>
+            <p>Does Not Accept:<%= resource.not_accept %></p>
+            <p>Details: <%= resource.details %></p>
+    </div>
+</div>  
 <%- include('../partials/nav') -%>
 <%- include('../partials/footer') -%>
