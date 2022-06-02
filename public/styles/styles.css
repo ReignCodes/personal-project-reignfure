@@ -134,30 +134,7 @@ h2 {
     color: var(--orange);
 }
 
-/* form styling */
-      /* html, body {
-      min-height: 100%;
-      }
-      body, div, form, input, select, textarea, p { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      line-height: 22px;
-      }
-      h1 {
-      position: absolute;
-      margin: 0;
-      font-size: 32px;
-      color: #fff;
-      z-index: 2;
-      }
-      h5 {
-      margin: 10px 0;
-      } */
-      .testbox {
+      .formContainer {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -169,24 +146,8 @@ h2 {
       padding: 20px;
       border-radius: 6px;
       background: #fff;
-      box-shadow: 0 0 20px 0 #095484; 
-      }
-      .banner {
-      position: relative;
-      height: 210px;
-      background-image: url('');  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      .banner::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.5); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      box-shadow: 0 0 20px 0 var(--dark-teal); 
+
       }
       input, select, textarea {
       margin-bottom: 10px;
@@ -207,12 +168,12 @@ h2 {
       padding: 5px;
       }
       .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder, a {
-      color: #095484;
+      color: var(--dark-teal);
       }
       .item input:hover, .item select:hover, .item textarea:hover {
       border: 1px solid transparent;
-      box-shadow: 0 0 6px 0 #095484;
-      color: #095484;
+      box-shadow: 0 0 6px 0 var(--dark-teal);
+      color: var(--dark-teal);
       }
       .item {
       position: relative;
@@ -265,21 +226,21 @@ h2 {
       width: 17px;
       height: 17px;
       border-radius: 50%;
-      border: 2px solid #095484;
+      border: 2px solid var(--dark-teal);
       }
       label.check:before {
       top: 2px;
       width: 16px;
       height: 16px;
       border-radius: 2px;
-      border: 1px solid #095484;
+      border: 1px solid var(--dark-teal);
       }
       input[type=checkbox]:checked + .check:before {
-      background: #095484;
+      background: var(--dark-teal);
       }
       label.radio:after {
       left: 5px;
-      border: 3px solid #095484;
+      border: 3px solid var(--dark-teal);
       }
       label.check:after {
       left: 4px;
@@ -309,7 +270,7 @@ h2 {
       padding: 10px;
       border: none;
       border-radius: 5px; 
-      background: #095484;
+      background: var(--dark-teal);
       font-size: 16px;
       color: #fff;
       cursor: pointer;

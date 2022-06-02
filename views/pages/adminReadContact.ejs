@@ -1,0 +1,43 @@
+<%- include('../partials/header') -%> 
+<%- include('../partials/adminNav') -%>
+<main>
+  <div class="container">
+    <h1>Read Contact Info</h1>
+      <div class="formContainer">
+          <div class="formAnswer">
+            <p>First Name: <%= contact.f_name %></p>
+            <p>Last Name: <%= contact.l_name %></p>
+            <p>Email: <%= contact.email %></p>
+            <p>Organization: <%= contact.org %></p>
+            <p>Volunteer? <%= contact.vol %></p>
+          </div>
+          <div class="formItem">
+            <p>Message:</p>
+            <p><%= contact.message %></p>
+          </div>  
+        <form action="/contact" method="PUT">
+          <div class="formItem">
+            <label for="contact">Has this person be contacted?</label>
+            <input type="radio" value="false" id="no_cont" name="contact" required/>
+            <label for="no_cont" class="radio">No</label>
+            <input type="radio" value="true" id="yes_cont" name="contact" required/>
+            <label for="yes_cont" class="radio">Yes</label>
+          </div>
+          <div class="formItem">
+            <label for="admin">Approved and Registered as an Admin?</label>
+            <input type="radio" value="false" id="no_admin" name="admin" required/>
+            <label for="no_admin" class="radio">No</label>
+            <input type="radio" value="true" id="yes_admin" name="admin" required/>
+            <label for="yes_admin" class="radio">Yes</label>
+          </div>
+          <div class="formItem">
+            <label for="user_name">If yes, what is their username?</label>
+            <input type="text" id="user_name" name="user_name" placeholder="username">
+          </div>
+          <input type="submit" class="formSubmitBtn" type="submit" value="Submit">
+        </form>
+      </div>
+  </div> 
+</main>  
+
+<%- include('../partials/footer') -%>

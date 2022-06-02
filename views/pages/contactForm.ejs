@@ -1,34 +1,42 @@
 <%- include('../partials/header') -%> 
 <%- include('../partials/nav') -%>
-<div class="container">
-    <div class="formContainer">
-      <form action="/admin/volunteer">
-        <div class="formItem">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name..">
-        </div>
-        <div class="formItem">
-          <label for="org">Organization</label>
-          <input type="text" id="org" name="org" placeholder="Your organization..">
-        </div>
-        <div class="formItem">
-          <label for="email">Enter your contact email:</label>
-          <input type="email" name="email" placeholder="Your email.."> 
-        </div>
-        <div class="formItem">
-          <label for="volunteer">Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
-          <input type="radio" value="true" id="yesVol" name="volunteer" required/>
-          <label for="yesVol" class="radio">Yes</label>
-          <input type="radio" value="false" id="noVol" name="volunteer" required/>
-          <label for="noVol" class="radio">No</label>
-        </div>
-        <div class="formItem">
-          <label for="subject">Message</label>
-          <textarea class="formTextBox" id="subject" name="subject" placeholder="What do you want us to know?"></textarea>
-        </div>
-        <button class="formSubmitBtn" type="submit" value="Submit">Submit!</button>
-      </form>
-    </div>
-  </div>   
+<main>
+  <div class="container">
+    <h1>Contact Us</h1>
+      <div class="formContainer">
+        <!-- is this right? -->
+        <form action="/adminConsole/contact" method="POST">
+          <div class="formItem">
+            <label for="f_name">First Name:</label>
+            <input type="text" id="f_name" name="name" placeholder="Your first name..">
+          </div>
+          <div class="formItem">
+            <label for="l_name">Last Name:</label>
+            <input type="text" id="l_name" name="l_name" placeholder="Your last name..">
+          </div>
+          <div class="formItem">
+            <label for="email">Enter your contact email:</label>
+            <input type="email" name="email" placeholder="Your email.."> 
+          </div>
+          <div class="formItem">
+            <label for="org">Organization:</label>
+            <input type="text" id="org" name="org" placeholder="Your organization..">
+          </div>
+          <div class="formItem">
+            <label for="vol">Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
+            <input type="radio" value="true" id="yesVol" name="vol" required/>
+            <label for="yesVol" class="radio">Yes</label>
+            <input type="radio" value="false" id="noVol" name="vol" required/>
+            <label for="noVol" class="radio">No</label>
+          </div>
+          <div class="formItem">
+            <label for="subject">Message:</label>
+            <textarea class="formTextBox" id="msg" name="msg" placeholder="What do you want us to know?"></textarea>
+          </div>
+          <button class="formSubmitBtn" type="submit" value="Submit">Submit!</button>
+        </form>
+      </div>
+  </div> 
+</main>  
 
 <%- include('../partials/footer') -%>

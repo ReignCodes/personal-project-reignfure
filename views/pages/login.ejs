@@ -1,0 +1,28 @@
+<%- include('../partials/header') -%> 
+    
+<%- include('../partials/nav') -%>
+<main>
+    <div class="container">
+        <h1>administrator login</h1>
+        <div class="formContainer">
+            <form action="/login" method="put">
+                <div class="item">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class="item">
+                    <label for="password">Password</label>
+                    <input type="password" name="Password" id="Password" min="10" required> 
+                </div>
+                <div class="item">
+                    <div class="formSubmitBtn">
+                    <input class="button" type="submit" value="Submit">  
+                    </div>
+                </div>
+                <p>Don't Have An Account?</p>
+                <p><a href="/contact">Contact Us apply to be an admin here!</a></p>  
+            </form>
+        </div>
+    </div>
+</main>
+<%- include('../partials/footer') -%>

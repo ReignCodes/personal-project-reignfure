@@ -5,7 +5,7 @@ const siteRouter = require('./siteRouter');
 const router = express.Router();
 
 router.use('/', siteRouter);
-router.use('/admin', adminRouter);
+router.use('/adminConsole', adminRouter);
 router.use('/resource', resourceRouter);
 
 module.exports = router;

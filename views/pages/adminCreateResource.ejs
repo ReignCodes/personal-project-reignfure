@@ -3,8 +3,8 @@
 <%- include('../partials/nav') -%>
 <main>
     <div class="formContainer">
-        <!-- is this right? -->
-        <form action="/adminConsole">
+        <!-- is this right? should publish to page-->
+        <form action="/adminConsole/">
           <h1>Create Resource</h1>
           <div class="item">
             <label for="name">Name of Resource</label><span class="required">*</span>
@@ -119,49 +119,49 @@
           <div class="question">
             <label for='days'>Does this resource accept donations?</label><span class="required">*</span>
             <div class="question-answer">
-              <input type="radio" value="true" id="acceptsDonations" name="donations" required/>
-              <label for="acceptsDonations" class="radio"><span>Yes</span></label>
+              <input type="radio" value="true" id="yesDonations" name="donations" required/>
+              <label for="yesDonations" class="radio"><span>Yes</span></label>
               <input type="radio" value="false" id="noDonations" name="donations" required/>
               <label for="noDonations" class="radio"><span>No</span></label>
             </div>
           </div>
           <div class="question">
             <p>What kind of donations does this resource accept?<span class="required">*</span></p>
-            <div class="question-answer checkbox-item" name="accepts">
+            <div class="question-answer checkbox-item" name="accpts">
               <div>
-                <input type="checkbox" value="Fresh produce" id="check_1" name="accepts" required/>
+                <input type="checkbox" value="Fresh produce" id="check_1" name="accpts" required/>
                 <label for="check_1" class="check"><span>Fresh produce</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Fresh dairy/eggs" id="check_2" name="accepts" required/>
+                <input type="checkbox" value="Fresh dairy/eggs" id="check_2" name="accpts" required/>
                 <label for="check_2" class="check"><span>Fresh dairy/eggs</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Sealed Canned/jarred food" id="check_3" name="accepts" required/>
+                <input type="checkbox" value="Sealed Canned/jarred food" id="check_3" name="accpts" required/>
                 <label for="check_3" class="check"><span>Sealed Canned/jarred food</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Sealed packaged/labeled pre-made food" id="check_4" name="accepts" required/>
+                <input type="checkbox" value="Sealed packaged/labeled pre-made food" id="check_4" name="accpts" required/>
                 <label for="check_4" class="check"><span>Sealed packaged/labeled pre-made food</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Sealed frozen food" id="check_5" name="accepts" required/>
+                <input type="checkbox" value="Sealed frozen food" id="check_5" name="accpts" required/>
                 <label for="check_5" class="check"><span>Sealed frozen food</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Sealed packaged/labeled baked goods" id="check_6" name="accepts" required/>
+                <input type="checkbox" value="Sealed packaged/labeled baked goods" id="check_6" name="accpts" required/>
                 <label for="check_6" class="check"><span>Sealed packaged/labeled baked goods</span></label>
               </div>
               <div>
-                <input type="checkbox" value="New hygiene products" id="check_7" name="accepts" required/>
+                <input type="checkbox" value="New hygiene products" id="check_7" name="accpts" required/>
                 <label for="check_7" class="check"><span>New hygiene products</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Sealed disposable plates/cups/utensils" id="check_8" name="accepts" required/>
+                <input type="checkbox" value="Sealed disposable plates/cups/utensils" id="check_8" name="accpts" required/>
                 <label for="check_8" class="check"><span>Sealed disposable plates/cups/utensils</span></label>
               </div>
               <div>
-                <input type="checkbox" value="Clothing" id="check_9" name="accepts" required/>
+                <input type="checkbox" value="Clothing" id="check_9" name="accpts" required/>
                 <label for="check_9" class="check"><span>Clothing</span></label>
               </div>
             </div>
@@ -170,23 +170,23 @@
                 <p>What kind of donations does this resource NOT accept?<span class="required">*</span></p>
                 <div class="question-answer checkbox-item">
                   <div>
-                    <input type="checkbox" value="Raw meat" id="check_10" name="not_accept" required/>
+                    <input type="checkbox" value="Raw meat" id="check_10" name="no_accpt" required/>
                     <label for="check_10" class="check"><span>Raw meat</span></label>
                   </div>
                   <div>
-                    <input type="checkbox" value="Homemade food" id="check_11" name="not_accept" required/>
+                    <input type="checkbox" value="Homemade food" id="check_11" name="no_accpt" required/>
                     <label for="check_11" class="check"><span>Homemade food</span></label>
                   </div>
                   <div>
-                    <input type="checkbox" value="Dairy" id="check_12" name="not_accept" required/>
+                    <input type="checkbox" value="Dairy" id="check_12" name="no_accpt" required/>
                     <label for="check_12" class="check"><span>Dairy</span></label>
                   </div>
                   <div>
-                    <input type="checkbox" value="Hygiene products" id="check_13" name="not_accept" required/>
+                    <input type="checkbox" value="Hygiene products" id="check_13" name="no_accpt" required/>
                     <label for="check_13" class="check"><span>Hygiene products</span></label>
                   </div>
                   <div>
-                    <input type="checkbox" value="Clothing" id="check_14" name="not_accept" required/>
+                    <input type="checkbox" value="Clothing" id="check_14" name="no_accpt" required/>
                     <label for="check_14" class="check"><span>Clothing</span></label>
                   </div>
                   <div>

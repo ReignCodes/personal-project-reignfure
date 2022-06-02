@@ -1,0 +1,17 @@
+<tr>
+    <td><%= contact.l_name %> </td>
+    <td><%= contact.f_name %> </td>
+    <td><%= contact.vol %> </td>
+    <td><%= contact.cntct %></td>
+    <td><%= contact.admin %></td>
+    
+<!-- ARE THESE FORM ACTIONS RIGHT? -->
+    <td>
+        <button class="review-button"><a href="/adminConsole/contact/<%= contact._id %>">Read</a></button>
+    </td>
+    <td>
+        <form action="/adminConsole/contact/<%= contact._id %>?_method=DELETE" method="POST">
+       <button class="review-button" type="submit">Delete</button>
+        </form> 
+    </td>
+ </tr>

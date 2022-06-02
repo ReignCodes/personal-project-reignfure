@@ -1,4 +1,6 @@
 const resource = require('../models/resourceModel');
+const contact = require('../models/contactModel');
+
 
 module.exports = {
     admin: (req, res) => {
@@ -17,7 +19,7 @@ module.exports = {
                 return error;
             } else {
                 res.render('pages/adminConsole', {
-                    resources: allResources,
+                    contacts: allContacts,
                 });    
             }
         })
