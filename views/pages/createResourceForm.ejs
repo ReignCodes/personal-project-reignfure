@@ -1,14 +1,11 @@
-
 <%- include('../partials/header') -%> 
     
 <%- include('../partials/nav') -%>
 <main>
-    <div class="testbox">
-        <form action="/">
-          <div class="banner">
-            <h1>Resource Submission Form</h1>
-          </div>
-          <h2>Are we missing an important resource? Please tell us about it!</h2>
+    <div class="formContainer">
+        <!-- is this right? -->
+        <form action="/adminConsole">
+          <h1>Create Resource</h1>
           <div class="item">
             <label for="name">Name of Resource</label><span class="required">*</span>
             <input type="text" name="name" id="name" minlength="5" required/>
@@ -37,7 +34,7 @@
             <i class="fas fa-calendar-alt"></i>
           </div>
           <div class="item">
-            <label for="st_add">Resource Address</label><span class="required">*</span></p>
+            <label for="address">Resource Address</label><span class="required">*</span></p>
             <input type="text" name="st_add" placeholder="Street address" required/>
             <div class="textInputSmall">
               <input type="text" name="city" placeholder="City" required/>
@@ -49,30 +46,48 @@
                 <option value="Canada">Canada</option>
               </select>
             </div>
-            <input type="text" name="loc_desc" placeholder="Description of location of resource; ie: around the side of the building." required/>
+          </div>
+          <div class="formTextBox>
+            <input type="text" name="loc_desc" placeholder="Description of location of resource.." required/>
           </div>
           <div class="item">
-          <label for="web">Website</label><span class="required">*</span></p>
-            <input type="url" name="web" placeholder="Provide url for resource" required/>
+            <label for="coords">google earth coordinates</label>
+            <input type="coords" name="coords" placeholder="Cooridinates of location" required/>
           </div>
           <div class="item">
-            <label for="facebook">Facebook <i class="fab fa-facebook-f"></i></label>
+            <label for="googleMaps">google maps link</label>
+            <input type="url" name="googleMaps" placeholder="google maps link url" required/>
+          </div>
+          <div class="item">
+          <label for="website">Website</label><span class="required">*</span></p>
+            <input type="url" name="web" placeholder="Url for resource" required/>
+          </div>
+          <div class="item">
+            <label for="facebook">Facebook</label>
             <input type="text" name="facebook"/>
           </div>
           <div class="item">
-            <label for="insta">Instagram <i class="fab fa-instagram"></i></label>
+            <label for="insta"></label>
             <input type="text" name="insta"/>
           </div>
           <div class="item">
             <label for="email">Email</label>
             <input type="email" name="email"/>
           </div>
+          <div class="formTextBox">
+            <label for="dtls">resource details</label>
+            <input type="text" name="dtls"/>
+          </div>
+          <div class="item">
+            <label for="img">image</label>
+            <input type="text" name="img"/>
+          </div>
           <div class="question">
-            <label for="opnHrs">Is this resource open 24/7?</label><span class="required">*</span></p>
+            <label for="openHours">Is this resource open 24/7?</label><span class="required">*</span></p>
             <div class="question-answer">
-              <input type="radio" value="true" id="open24" name="opnHrs" required/>
+              <input type="radio" value="true" id="open24" name="openHours" required/>
               <label for="open24" class="radio"><span>Yes</span></label>
-              <input type="radio" value="false" id="notOpen24" name="opnHrs" required/>
+              <input type="radio" value="false" id="notOpen24" name="openHours" required/>
               <label for="notOpen24" class="radio"><span>No</span></label>
             </div>
           </div>
@@ -80,7 +95,25 @@
             <label for='days'>If No, please list the Hours of Operation below:</label>
             <div class="textInputSmall">
               <input type="text" name="days" placeholder="Days open">
-              <input type="text" name="hrs" placeholder="Hours open">
+              <input type="string" name="hours" placeholder="Hours open">
+            </div>
+          </div>
+          <div class="question">
+            <label for="frz">Does this resource have a freezer?</label><span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="true" id="yesFrz" name="frz" required/>
+              <label for="yesFrz" class="radio"><span>Yes</span></label>
+              <input type="radio" value="false" id="noFrz" name="frz" required/>
+              <label for="noFrz" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <label for="frz">Does this resource have a pantry?</label><span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="true" id="yesPantry" name="pantry" required/>
+              <label for="yesPantry" class="radio"><span>Yes</span></label>
+              <input type="radio" value="false" id="noPantry" name="pantry" required/>
+              <label for="noPantry" class="radio"><span>No</span></label>
             </div>
           </div>
           <div class="question">
@@ -162,24 +195,5 @@
                 </div>
             </div> 
         </form>
-        <form action="/admin/volunteer">
-            <div class="question" name="volunteer">
-            <label for='days'>Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
-            <div class="question-answer">
-              <input type="radio" value="True" id="yesVol" name="volunteer" required/>
-              <label for="yesVol" class="radio">Yes</label>
-              <input type="radio" value="False" id="noVol" name="volunteer" required/>
-              <label for="noVol" class="radio">No</label>
-            </div>
-          </div>
-            <div class="item">
-                <label for="email">Enter your contact email:</label>
-                <input type="email" name="email"> 
-            </div>
-            <div class="btn-block">
-              <button type="submit" href="/">Submit</button>
-            </div>
-        </form>
-        </div>
 </main>
     <%- include('../partials/footer') -%>

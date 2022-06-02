@@ -12,12 +12,18 @@ const resourceSchema = new Schema({
     type: String,
     required: [true, 'A resource type is required']
   },
-  organization: {
+  org: {
     type: String,
     required: [true, 'An organization name is required.'],
     minlength:[1,'Minimun length for the organization name is 1 character.']
   },
-  street_address: {
+  google_maps: {
+    type: URL
+  },
+  coords: {
+    type: GeolocationCoordinates,
+  },
+  st_add: {
     type: String,
     required: [true, 'The street address is required.'],
     minlength:[5,'Minimun length for the street address is 5 characters.']
@@ -45,43 +51,40 @@ const resourceSchema = new Schema({
     required: [true, 'The country is required.'],
     minlength:[3,'Minimun length for the country is 2 characters.']
   },
-  loc_description: {
+  loc_desc: {
     type: String,
-    required: [true, 'The country is required.'],
-    minlength:[3,'Minimun length for the country is 2 characters.']
   },
-  open_hours: {
+  opn_hrs: {
     type: Boolean,
     required: [true, 'This is required.']
   },
   hours: {
-    type: TimeRanges,
-    required: [true, 'Open hours are required']
+    type: String,
   },
   days: {
-    type: Array,
+    type: String,
   },
   start_date: {
     type: Date,
   },
-  freezer: {
+  frz: {
     type: Boolean,
     required: [true, 'this is required'],
   },
-  dry_pantry: {
+  pantry: {
     type: Boolean,
     required: [true, 'this is required']
   },
-  accept: {
+  accpt: {
     type: Array
   },
-  not_accept: {
+  no_accpt: {
     type: Array
   },
-  details: {
+  dtls: {
     type: String
   },
-  image: {
+  img: {
     type: File
   },
 });
