@@ -3,10 +3,10 @@
     
 <%- include('../partials/nav') -%>
 <main>
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="formContainer">
       <!-- should not publish to page, should go to RESOURCEMODEL and should populate in admin console table -->
-        <form action="/adminConsole">
+        <form action="/resource" method="POST">
           <h1>Resource Submission Form</h1>
           <h2>Are we missing an important resource? Please tell us about it!</h2>
           <div class="item">
@@ -157,39 +157,41 @@
                     <label for="check_14" class="check"><span>Clothing</span></label>
                   </div>
                   <div>
-                    <input type="submit" value="Submit">
+                    <input class="formSubmitButton" type="submit" value="submit"/>
                   </div>
                 </div>
             </div> 
         </form>
+      </div>
+        
         <!-- two forms on same page with different action -->
         <!-- this should go CONTACTMODEL and populate in the admin console -->
         <!-- is this the right action/ -->
-        <form action="/adminConsole/contact" method="POST">
-          <div class="question">
-            <label for='vol'>Do you want to volunteer as an admin for this app?</label></span>
-            <div class="question-answer">
-              <input type="radio" value="True" id="yesVol" name="vol" required/>
-              <label for="yesVol" class="radio">Yes</label>
-              <input type="radio" value="False" id="noVol" name="vol" required/>
-              <label for="noVol" class="radio">No</label>
+        <div class="formContainer">
+          <form action="/adminConsole/contact" method="POST">
+            <div class="question">
+              <label for='vol'>Do you want to volunteer as an admin for this app?</label></span>
+              <div class="question-answer">
+                <input type="radio" value="True" id="yesVol" name="vol" required/>
+                <label for="yesVol" class="radio"><span>Yes</span></label>
+                <input type="radio" value="False" id="noVol" name="vol" required/>
+                <label for="noVol" class="radio"></label><span>No</span></label>
+              </div>
             </div>
-          </div>
-          <div class="formItem">
-            <label for="f_name">First Name:</label>
-            <input type="text" id="f_name" name="name" placeholder="Your first name..">
-          </div>
-          <div class="formItem">
-            <label for="l_name">Last Name:</label>
-            <input type="text" id="l_name" name="l_name" placeholder="Your last name..">
-          </div>
-          <div class="formItem">
-              <label for="email">Enter your contact email:</label>
-              <input type="email" name="email"> 
-          </div>
-          <input class="formSubmitBtn" type="submit">Submit</button>
-        </form>
+            <div class="formItem">
+              <label for="f_name">First Name:</label>
+              <input type="text" id="f_name" name="name" placeholder="Your first name..">
+            </div>
+            <div class="formItem">
+              <label for="l_name">Last Name:</label>
+              <input type="text" id="l_name" name="l_name" placeholder="Your last name..">
+            </div>
+            <div class="formItem">
+                <label for="email">Enter your contact email:</label>
+                <input type="email" name="email"> 
+            </div>
+            <input class="formSubmitBtn" type="submit" value="submit"/>
+          </form>
         </div>
-    </div>
 </main>
     <%- include('../partials/footer') -%>

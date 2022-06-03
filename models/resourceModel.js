@@ -20,10 +20,11 @@ const resourceSchema = new Schema({
     type: Date,
   },
   google_maps: {
-    type: URL
+    type: String
   },
+  // fix this later?
   coords: {
-    type: GeolocationCoordinates,
+    type: String,
   },
   st_add: {
     type: String,
@@ -44,7 +45,7 @@ const resourceSchema = new Schema({
     type: String,
   },
   zip: {
-    type: Location,
+    type: Number,
     required: [true, 'The zip code is required.'],
     minlength:[5,'Minimun length for the zip code is 5 characters.']
   },
@@ -67,7 +68,7 @@ const resourceSchema = new Schema({
     type: String,
   },
   web: {
-    type: URL,
+    type: String,
     required: [true, 'A URL is require.'],
     minlength: [10, 'The minimum length for the URL is 10 characters.']
   },
@@ -101,7 +102,7 @@ const resourceSchema = new Schema({
     type: String
   },
   img: {
-    type: File
+    type: String
   },
   approved: {
     type: Boolean

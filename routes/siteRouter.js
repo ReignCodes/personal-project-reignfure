@@ -9,9 +9,10 @@ router.route('/about')
     .get(siteCtrl.about);
 
 router.route('/login')
-    .get(siteCtrl.login);
+    .get(siteCtrl.login)
+    .post(siteCtrl.login_post);
 
-router.route('/submitResource')
-    .get(siteCtrl.submitResource);
+router.route('/logout')
+    .get(siteCtrl.logout);
 
 module.exports = router
