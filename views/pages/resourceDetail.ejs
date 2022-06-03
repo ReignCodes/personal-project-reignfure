@@ -1,5 +1,5 @@
 <%- include('../partials/header') -%> 
-<div class="contentContainer">
+<div class="contentContainerContainer">
     <h1>Resource Details</h1>
     <div class="containerImage">
     <img class="resourceImage" src="/images/<%= resource.image %>"  width="400px" />
@@ -25,7 +25,7 @@
             <p>Hours: <%= resource.hours %></p>
             <p>Freezer: <%= resource.freezer %></p>
             <p>Pantry: <%= resource.pantry %></p>
-            <p>accpts: <%= resource.accpt %></p>
+            <p>accpts: <%= resource.accpts %></p>
             <p>Does Not Accept:<%= resource.no_accpt %></p>
             <p>Details: <%= resource.details %></p>
     </div>

@@ -6,7 +6,7 @@
   <!-- <div class="container"> -->
     <div class="formContainer">
       <!-- should not publish to page, should go to RESOURCEMODEL and should populate in admin console table -->
-        <form action="/resource" method="POST">
+        <form action="/resource/submit" method="POST">
           <h1>Resource Submission Form</h1>
           <h2>Are we missing an important resource? Please tell us about it!</h2>
           <div class="item">
@@ -70,9 +70,9 @@
           <div class="question">
             <label for="opn_hrs">Is this resource open 24/7?</label><span class="required">*</span></p>
             <div class="question-answer">
-              <input type="radio" value="true" id="open24" name="opn_hrs" required/>
+              <input type="radio" value=1 id="open24" name="opn_hrs" required/>
               <label for="open24" class="radio"><span>Yes</span></label>
-              <input type="radio" value="false" id="notOpen24" name="opn_hrs" required/>
+              <input type="radio" value=0 id="notOpen24" name="opn_hrs" required/>
               <label for="notOpen24" class="radio"><span>No</span></label>
             </div>
           </div>
@@ -86,13 +86,18 @@
           <div class="question">
             <label for='days'>Does this resource accept donations?</label><span class="required">*</span>
             <div class="question-answer">
-              <input type="radio" value="true" id="yesDonations" name="donations" required/>
+              <input type="radio" value=1 id="yesDonations" name="donations" required/>
               <label for="yesDonations" class="radio"><span>Yes</span></label>
-              <input type="radio" value="false" id="noDonations" name="donations" required/>
+              <input type="radio" value=0 id="noDonations" name="donations" required/>
               <label for="noDonations" class="radio"><span>No</span></label>
             </div>
           </div>
-          <div class="question">
+          <!-- MAYBE DO THIS IN THE SCHEMA -->
+          <!-- key: {
+              value1: { type: Boolean, required: true, default: true },
+              value2: { type: Boolean, required: true, default: true }
+          } -->
+          <!-- <div class="question">
             <p>What kind of donations does this resource accept?<span class="required">*</span></p>
             <div class="question-answer checkbox-item" name="accpts">
               <div>
@@ -132,8 +137,8 @@
                 <label for="check_9" class="check"><span>Clothing</span></label>
               </div>
             </div>
-          </div>
-            <div class="question">
+          </div> -->
+            <!-- <div class="question">
                 <p>What kind of donations does this resource NOT accept?<span class="required">*</span></p>
                 <div class="question-answer checkbox-item">
                   <div>
@@ -155,12 +160,10 @@
                   <div>
                     <input type="checkbox" value="Clothing" id="check_14" name="no_accpt" required/>
                     <label for="check_14" class="check"><span>Clothing</span></label>
-                  </div>
-                  <div>
-                    <input class="formSubmitButton" type="submit" value="submit"/>
-                  </div>
+                  </div>    
                 </div>
-            </div> 
+            </div>  -->
+            <input class="formSubmitBtn" type="submit" value="submit"/>
         </form>
       </div>
         
@@ -168,19 +171,19 @@
         <!-- this should go CONTACTMODEL and populate in the admin console -->
         <!-- is this the right action/ -->
         <div class="formContainer">
-          <form action="/adminConsole/contact" method="POST">
+          <form action="/contact" method="POST">
             <div class="question">
               <label for='vol'>Do you want to volunteer as an admin for this app?</label></span>
               <div class="question-answer">
-                <input type="radio" value="True" id="yesVol" name="vol" required/>
+                <input type="radio" value=1 id="yesVol" name="vol" required/>
                 <label for="yesVol" class="radio"><span>Yes</span></label>
-                <input type="radio" value="False" id="noVol" name="vol" required/>
+                <input type="radio" value=0 id="noVol" name="vol" required/>
                 <label for="noVol" class="radio"></label><span>No</span></label>
               </div>
             </div>
             <div class="formItem">
               <label for="f_name">First Name:</label>
-              <input type="text" id="f_name" name="name" placeholder="Your first name..">
+              <input type="text" id="f_name" name="f_name" placeholder="Your first name..">
             </div>
             <div class="formItem">
               <label for="l_name">Last Name:</label>

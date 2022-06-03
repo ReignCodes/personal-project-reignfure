@@ -2,11 +2,10 @@
 <%- include('../partials/adminNav') -%>
 <main>
   <div class="formContainer">
-      <form action="/">
+      <form action="/resource/<%= foundComic._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
         <div class="formHeading">
           <h1>Approve and Publish Resource</h1>
         </div>
-        <h2>Are we missing an important resource? Please tell us about it!</h2>
         <div class="item">
           <label for="name">Name of Resource</label><span class="required">*</span>
           <input type="text" name="name" id="name" value="<%= foundResource.name %>" minlength="5" required/>
@@ -31,66 +30,66 @@
         </div>
         <div class="item">
           <label for="date">Date Resource Opened</label><span class="required">*</span>
-          <input type="date" name="bdate"/>
+          <input type="date" name="start_date" value="<%= foundResource.start_date %>" />
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="item">
           <label for="address">Resource Address</label><span class="required">*</span></p>
-          <input type="text" name="address" placeholder="Street address" required/>
+          <input type="text" name="address" value="<%= foundResource.st_add %>" required/>
           <div class="textInputSmall">
-            <input type="text" name="city" placeholder="City" required/>
+            <input type="text" name="city" value="<%= foundResource.city %>" required/>
             <input type="text" name="county" placeholder="County/Region"/>
-            <input type="text" name="zip" placeholder="Postal / Zip code" required/>
+            <input type="text" name="zip" value="<%= foundResource.county %>" required/>
             <select name="country" required>
-              <option value="">Country</option>
+              <option value=""><%= foundResource.country %></option>
               <option value="USA">USA</option>
               <option value="Canada">Canada</option>
             </select>
           </div>
-          <input type="text" name="loc_desc" placeholder="Description of location of resource; ie: around the side of the building." required/>
+          <input type="text" name="loc_desc" value="<%= foundResource.loc_desc" %>" required/>
         </div>
         <div class="item">
         <label for="web">Website</label><span class="required">*</span></p>
-          <input type="url" name="web" placeholder="Provide url for resource" required/>
+          <input type="url" name="web" value="<%= foundResource.web %>" required/>
         </div>
         <div class="item">
           <label for="facebook">Facebook <i class="fab fa-facebook-f"></i></label>
-          <input type="text" name="facebook"/>
+          <input type="text" name="facebook" value="<%= foundResource.facebook %>"/>
         </div>
         <div class="item">
           <label for="insta">Instagram <i class="fab fa-instagram"></i></label>
-          <input type="text" name="insta"/>
+          <input type="text" name="insta" value="<%= foundResource.insta %>"/>
         </div>
         <div class="item">
           <label for="email">Email</label>
-          <input type="email" name="email"/>
+          <input type="email" name="email" value="<%= foundResource.email %>"/>
         </div>
         <div class="question">
           <label for="opn_hrs">Is this resource open 24/7?</label><span class="required">*</span></p>
           <div class="question-answer">
-            <input type="radio" value="true" id="open24" name="opn_hrs" required/>
+            <input type="radio" value="<%= foundResource.opn_hrs %>" id="open24" name="opn_hrs" required/>
             <label for="open24" class="radio"><span>Yes</span></label>
-            <input type="radio" value="false" id="notOpen24" name="opn_hrs" required/>
+            <input type="radio" value="<%= foundResource.opn_hrs %>" id="notOpen24" name="opn_hrs" required/>
             <label for="notOpen24" class="radio"><span>No</span></label>
           </div>
         </div>
         <div class="item">
           <label for='days'>If No, please list the Hours of Operation below:</label>
           <div class="textInputSmall">
-            <input type="text" name="days" placeholder="Days open">
-            <input type="text" name="hrs" placeholder="Hours open">
+            <input type="text" name="days" value="<%= foundResource.days %>">
+            <input type="text" name="hrs" value="<%= foundResource.hrs %>">
           </div>
         </div>
         <div class="question">
           <label for='donations'>Does this resource accept donations?</label><span class="required">*</span>
           <div class="question-answer">
-            <input type="radio" value="true" id="yesDonations" name="donations" required/>
+            <input type="radio" value="<%= foundResource.donations %>" id="yesDonations" name="donations" required/>
             <label for="yesDonations" class="radio"><span>Yes</span></label>
-            <input type="radio" value="false" id="noDonations" name="donations" required/>
+            <input type="radio" value="<%= foundResource.opn_hrs %>" id="noDonations" name="donations" required/>
             <label for="noDonations" class="radio"><span>No</span></label>
           </div>
         </div>
-        <div class="question">
+        <!-- <div class="question">
           <p>What kind of donations does this resource accept?<span class="required">*</span></p>
           <div class="question-answer checkbox-item" name="accpts">
             <div>
@@ -130,8 +129,8 @@
               <label for="check_9" class="check"><span>Clothing</span></label>
             </div>
           </div>
-        </div>
-          <div class="question">
+        </div> -->
+          <!-- <div class="question">
               <p>What kind of donations does this resource NOT accept?<span class="required">*</span></p>
               <div class="question-answer checkbox-item">
                 <div>
@@ -154,42 +153,25 @@
                   <input type="checkbox" value="Clothing" id="check_14" name="no_accpt" required/>
                   <label for="check_14" class="check"><span>Clothing</span></label>
                 </div>
+              </div> -->
+              <div class="item">
+                <label for="google_maps">Google Maps Link</label>
+                <input type="text" name="google_maps" value="<%= foundResource.google_maps %>"/>
               </div>
               <div class="question">
                 <label for='approve'>Do you want to approve and publish this resource?</label><span class="required">*</span>
                 <div class="question-answer">
-                  <input type="radio" value="true" id="yes_approve" name="approve" required/>
+                  <input type="radio" value=1 id="yes_approve" name="approve" required/>
                   <label for="yes_approve" class="radio"><span>Yes</span></label>
-                  <input type="radio" value="false" id="no_approve" name="approve" required/>
+                  <input type="radio" value=0 id="no_approve" name="approve" required/>
                   <label for="no_approve" class="radio"><span>No</span></label>
                 </div>
               </div>
-              <div class="formSubmitBtn">
-                  <input type="submit" value="Submit">
+              <div >
+                  <input type="submit" class="formSubmitBtn" value="Submit">
               </div>   
           </div> 
         </div>
     </form>
-    <!-- THIS DOESNT NEED TO BE HERE BC THIS INFO SHOULD GET SENT TO THE CONTACT ADMIN PAGE? -->
-      <!-- <div class="formContainer">
-        <form action="/adminConsole/contact">
-            <div class="question">
-            <label for="volunteer">Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
-            </div>
-            <div class="question-answer">
-            <input type="radio" value="<%= foundVolAdmin.volunteer %>" id="yesVol" name="volunteer" required/>
-            <label for="yesVol" class="radio">Yes</label>
-            <input type="radio" value="<%= foundVolAdmin.volunteer %>" id="noVol" name="volunteer" required/>
-            <label for="noVol" class="radio">No</label>
-            </div>
-            <div class="item">
-                <label for="contact">Enter your contact email:</label>
-                <input type="email" name="email" value="<%= foundVolAdmin.email %>"> 
-            </div>
-            <div class="submitBtn">
-            <input type="submit" value="Submit">
-            </div>
-        </form>
-    </div> -->
 </main>
 <%- include('../partials/footer') -%>

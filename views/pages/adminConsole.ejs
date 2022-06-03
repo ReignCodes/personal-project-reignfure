@@ -1,11 +1,12 @@
 <%- include('../partials/header') -%> 
+
 <%- include('../partials/nav') -%>
 <main>
     <div class="container">
-        <div class="content">
+        <div class="contentContainer">
             <h1>Admin Console</h1>
         <div class="tableContainer">    
-            <table class="tableContent">
+            <table class="tablecontentContainer">
                 <thead>
                     <h2>Resources</h2>
                 <tr>
@@ -23,7 +24,7 @@
         </div>
 
         <div class="tableContainer">
-            <table class="tableContent">
+            <table class="tablecontentContainer">
                 <thead>
                     <h2>Contact Inbox</h2>
                 <tr>
@@ -38,7 +39,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    
+                    <%- include('../partials/contact') -%>
                 </tbody>
            </table>
         </div>

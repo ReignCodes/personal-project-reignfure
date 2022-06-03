@@ -24,9 +24,9 @@ module.exports = {
         });
         newContact.save();
         if (f_name != "") {
-            // does this make sense? How would i make a think appear on the homepage that says thanks instead? Do I have to make a thank you page?
-            alert("Thank you for contacting us, we will get back to you asap!");
-            res.redirect("/pages/index");
+            // // does this make sense? How would i make a think appear on the homepage that says thanks instead? Do I have to make a thank you page?
+            // alert("Thank you for contacting us, we will get back to you asap!");
+            res.redirect("/");
         } else {
             res.redirect("/contactForm")
         }

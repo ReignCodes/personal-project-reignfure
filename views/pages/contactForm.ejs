@@ -5,7 +5,7 @@
     <h1>Contact Us</h1>
       <div class="formContainer">
         <!-- is this right? -->
-        <form action="/adminConsole/contact" method="POST">
+        <form action="/contact" method="POST">
           <div class="formItem">
             <label for="f_name">First Name:</label>
             <input type="text" id="f_name" name="name" placeholder="Your first name..">
@@ -24,10 +24,10 @@
           </div>
           <div class="formItem">
             <label for="vol">Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
-            <input type="radio" value="true" id="yesVol" name="vol" required/>
-            <label for="yesVol" class="radio">Yes</label>
-            <input type="radio" value="false" id="noVol" name="vol" required/>
-            <label for="noVol" class="radio">No</label>
+            <input type="radio" value=1 id="yesVol" name="vol" required/>
+            <label for="yesVol" class="radio"><span>Yes</span></label>
+            <input type="radio" value=0 id="noVol" name="vol" required/>
+            <label for="noVol" class="radio"><span>No</span></label>
           </div>
           <div class="formItem">
             <label for="subject">Message:</label>

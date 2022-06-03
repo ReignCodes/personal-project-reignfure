@@ -1,4 +1,26 @@
 <%- include('../partials/header') -%> 
     
 <%- include('../partials/nav') -%>
+<%- include('../partials/header') -%> 
+<%- include('../partials/nav') -%>
+<main>
+    <div class="container">
+        <h3>Shelters & Warming Centers</h3>
+    <!-- HOW DO I PULL THESE BASED ON KEY:VALUE FROM SINGLE DB -->
+    <div class="contentContainerContainer">
+        <% for (resource of resources)  { %>
+        <div class="eachResource"> 
+            <!-- <a href="/resourceDetail/<%= resource._id %>"><img src="/images/<%= resource.image %>" width="200" /></a> -->
+            <br>
+            <p><span class="resource_name"> <%= resource.name%></span></p>
+            <p><%= resource.city %>, <%= resource.state %></p>
+            <p><a href="<%= resource.google_maps %>">Google Directions</a></p>
+            <p><%= resource.type %></p>
+            <p><%= resource.web %></p>
+            <!-- what should this link be? -->
+            <a class="details_link" href="./resourceDetail/<%= resource._id %>">More Info...</a>  
+        </div>
+        <% } %>
+</main>
+<%- include('../partials/footer') -%>
 <%- include('../partials/footer') -%>

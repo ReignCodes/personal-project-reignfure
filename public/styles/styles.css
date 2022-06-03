@@ -20,8 +20,10 @@ body {
 }
 
 .logo {
+    display: flex;
     justify-content: center;
-    width: 40rem;
+    min-width: 60%;
+    max-width: 75%;
     padding-top: 2%;
     
 }
@@ -29,7 +31,7 @@ body {
 .navBar {
     display: flex;
     justify-content: space-around;
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: auto;
     text-transform: uppercase;
     padding: 0 1rem;
@@ -37,7 +39,7 @@ body {
 
 
 .dropBtn {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: inherit;
     text-transform: uppercase;
     border: none;
@@ -73,6 +75,7 @@ body {
 /* BODY STYLING */
 h1 {
     color: var(--orange);
+    font-size: 3rem;
     padding-top: 2rem;
     margin-left: 2rem;
     text-align: center;
@@ -87,11 +90,16 @@ h2 {
     border-radius: 1rem;
 }
 
-.content {
+.contentContainer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 2rem;
+    padding: 1rem 5rem;
+    margin: 1rem;
+}
+
+.flexContentRow {
+    flex-direction: row;
 }
 
 .indexPhoto {
@@ -239,7 +247,7 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
     margin-top: 10px;
     text-align: center;
 }
-button {
+.formSubmitBtn {
     width: 150px;
     padding: 10px;
     border: none;
@@ -249,10 +257,10 @@ button {
     color: #fff;
     cursor: pointer;
 }
-button:hover {
+.formSubmitBtn:hover {
     background: var(--dark-teal);
 }
-@media (min-width: 568px) {
+/* @media (min-width: 568px) {
     .city-item {
     display: flex;
     flex-wrap: wrap;
@@ -264,29 +272,26 @@ button:hover {
     .city-item select {
     width: calc(50% - 8px);
     }
-}
+} */
 
 
 
 /* FOOTER STYLING */
 .footerContainer {
-    background-color: var(--dark-teal);
-    border-radius: 1rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(--dark-teal);
+    border-radius: 1rem;
     color: white;
     margin-top: 2rem;
     padding: 1rem;
 }
 
 .footerLinkBlock {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    padding: 0 10rem;
+    padding: 0 2rem;
 }
 
 .footerLinkBlock a:link {

@@ -1,37 +1,33 @@
-const resource = require('../models/resourceModel');
-const contact = require('../models/contactModel');
+const Resource = require('../models/resourceModel');
+const Contact = require('../models/contactModel');
 
 
 module.exports = {
     admin: (req, res) => {
         res.render('pages/adminConsole')
-    //     // if(req.isAuthenticated()){
-    //     resource.find({}, (error, allResources) => {
-    //         if(error) {
-    //             return error;
-    //         } else {
-    //             res.render('pages/adminConsole', {
-    //                 resources: allResources,
-    //             });    
-    //         }
-    //     })
-    //     // contact.find({}, (error, allContacts) => {
-    //     //     if(error) {
-    //     //         return error;
-    //     //     } else {
-    //     //         res.render('pages/adminConsole', {
-    //     //             contacts: allContacts,
-    //     //         });    
-    //         // }
-    //     // })
-    // //   } else {
-    // //   res.redirect('/login')
-    // //   }
+        Resource.find({}, (error, allResources) => {
+            if(error) {
+                return error;
+            } else {
+                res.render('pages/adminConsole', {
+                    resources: allResources
+                });    
+            }
+            console.log(resources);
+        });
+        Contact.find({}, (error, allContacts) => {
+            if(error) {
+                return error;
+            } else {
+                res.render('pages/adminConsole', {
+                    contacts: allContacts
+                });    
+            }
+        });
     },
     read_contact: (req, res) => {
-        // if(req.isAuthenticated()){
             const { _id } = req.params;
-            contact.findOne({_id: _id}, (error, foundContact) => {
+            Contact.findOne({_id: _id}, (error, foundContact) => {
                 if(error) {
                     return error; 
                 } else {
@@ -40,9 +36,6 @@ module.exports = {
                     });
                 }
             });
-        //   } else {
-        //   res.redirect('/login');
-        //   }
     },
 
 
@@ -55,19 +48,15 @@ module.exports = {
     },
 
     review_resource:  (req, res) => {
-        if(req.isAuthenticated()){
             const { _id } = req.params;
-            resource.findOne({_id: _id}, (error, foundResource) => {
+            Resource.findOne({_id: _id}, (error, foundResource) => {
                 if(error) {
                     return error; 
                 } else {
                     res.render('pages/adminReviewResource', {
-                        foundResourcet: foundResource
+                        foundResource: foundResource
                     });
                 }
             });
-        } else {
-        res.redirect('/login');
-        }
     },
 }

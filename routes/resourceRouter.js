@@ -2,23 +2,23 @@ const express = require('express');
 const router = express.Router();
 const resourceCtrl = require('../controllers/resourceCtrl');
 
-// router.route('/fridges')
-//     .get(resourceCtrl.all_fridges);
+router.route('/:_id')
+    .get(resourceCtrl.resource_detail)
+    .put(resourceCtrl.submit_resource_put);
 
-// router.route('/meals')
-//     .get(resourceCtrl.all_meals);
+router.route('/fridges')
+    .get(resourceCtrl.all_fridges);
 
-// router.route('/shelters')
-//     .get(resourceCtrl.all_shelters);
+router.route('/meals')
+    .get(resourceCtrl.all_meals);
+
+router.route('/shelters')
+    .get(resourceCtrl.all_shelters);
 
 // why does the styling on this form break when I try to make it /submit?
-router.route('/')
+router.route('/submit')
     .get(resourceCtrl.submit_resource_get)
-    .post(resourceCtrl.submit_resource_post);
-
-/* not implemented */
-
-// router.route('/:_id')
-//     .get(resourceCtrl.)
+    .post(resourceCtrl.submit_resource_post)
+    
 
 module.exports = router
