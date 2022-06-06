@@ -11,11 +11,10 @@ module.exports = {
     },
 
     login: (req, res) => {
-    res.render('pages/login');    
+        res.render('pages/login');    
     },
         
     login_post: (req, res) => {
-        const {username, password} = req.body;
         const user = new User({
             username: username,
             password: password
@@ -31,6 +30,7 @@ module.exports = {
             }
         });
     },
+
     logout:(req, res) => {
         req.logout(function(error) {
             if(error) {

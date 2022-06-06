@@ -12,7 +12,7 @@
         </div>
         <div class="item">
           <label for="type">Resource Type</label><span class="required">*</span>
-          <select required>
+          <select name="type" id="type" required>
               <option value="<%= foundResource.type %>"><%= foundResource.type %></option>
               <option value="Fridge & Pantry">Fridge & Pantry</option>
               <option value="Micro Pantry (no fridge)">Micro Pantry (no fridge)</option>
@@ -31,7 +31,6 @@
         <div class="item">
           <label for="date">Date Resource Opened</label><span class="required">*</span>
           <input type="text" name="start_date" value="<%= foundResource.start_date %>" />
-          <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="item">
           <label for="address">Resource Address</label><span class="required">*</span></p>
@@ -41,7 +40,7 @@
             <input type="text" name="state" placeholder="State" value="<%= foundResource.state %>" required/>
             <input type="text" name="zip" value="<%= foundResource.zip %>" required/>
             <select name="country" required>
-              <option value="<%= foundResource.country %>"></option>
+              <option value="<%= foundResource.country %>"><%= foundResource.country %></option>
               <option value="USA">USA</option>
               <option value="Canada">Canada</option>
             </select>
@@ -55,11 +54,11 @@
           <input type="text" name="web" value="<%= foundResource.web %>"/>
         </div>
           <div class="item">
-            <label for="facebook">Facebook <i class="fab fa-facebook-f"></i></label>
+            <label for="facebook">Facebook</label>
             <input type="text" name="facebook" value="<%= foundResource.facebook %>"/>
           </div>
           <div class="item">
-            <label for="insta">Instagram <i class="fab fa-instagram"></i></label>
+            <label for="insta">Instagram</i></label>
             <input type="text" name="insta" value="<%= foundResource.insta %>"/>
           </div>
           <div class="item">
@@ -85,9 +84,9 @@
           <div class="question">
             <label for='donations'>Does this resource accept donations?</label><span class="required">*</span>
             <div class="question-answer">
-              <input type="radio" value="<%= foundResource.donations %>" id="yesDonations" name="donations"/>
+              <input type="radio" id="yesDonations" name="donations" value="<%= foundResource.donations %>"/>
               <label for="yesDonations" class="radio"><span>Yes</span></label>
-              <input type="radio" value="<%= foundResource.opn_hrs %>" id="noDonations" name="donations"/>
+              <input type="radio" id="noDonations" name="donations" value="<%= foundResource.opn_hrs %>"/>
               <label for="noDonations" class="radio"><span>No</span></label>
             </div>
           </div>
@@ -106,9 +105,9 @@
             <div class="question">
               <label for='approve'>Do you want to approve and publish this resource?</label><span class="required">*</span>
                 <div class="question-answer">
-                  <input type="radio" value=1 id="yes_approve" name="approve" />
+                  <input type="radio" value=1 id="yes_approve" name="approved" />
                   <label for="yes_approve" class="radio"><span>Yes</span></label>
-                  <input type="radio" value=0 id="no_approve" name="approve" />
+                  <input type="radio" value=0 id="no_approve" name="approved" />
                   <label for="no_approve" class="radio"><span>No</span></label>
                 </div>
             </div>

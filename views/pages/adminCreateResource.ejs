@@ -3,7 +3,6 @@
 <%- include('../partials/nav') -%>
 <main>
     <div class="formContainer">
-        <!-- is this right? should publish to page-->
         <form action="/adminConsole/">
           <h1>Create Resource</h1>
           <div class="item">
@@ -13,8 +12,8 @@
           <div class="item">
             <label for="type">Resource Type</label><span class="required">*</span>
             <select required>
-                <option value="">What kind of resource is this?</option>
-                <option value="Community Fridge & Pantry">Community Fridge & Pantry</option>
+                <option value="" disabled selected hidden>What kind of resource is this?</option>
+                <option value="Fridge & Pantry">Community Fridge & Pantry</option>
                 <option value="Micro Pantry (no fridge)">Micro Pantry (no fridge)</option>
                 <option value="Food Bank Pick-up">Food Bank Pick-up</option>
                 <option value="Prepared Meal Pick-up">Prepared Meal Pick-up</option>

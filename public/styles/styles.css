@@ -171,10 +171,6 @@ h2 {
     background-color: #0E9594;
 }
 
-.contentBox {
-   
-}
-
 .resourceContainer {
     display: flex;
     flex-wrap: wrap;
@@ -196,8 +192,9 @@ h2 {
 /* TABLE STYLING */
 
 .tableContainer {
+    max-height: 40rem;
     overflow-x: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
     white-space: nowrap;
 }
 
@@ -362,21 +359,6 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
 .formSubmitBtn:hover {
     background: var(--dark-teal);
 }
-/* @media (min-width: 568px) {
-    .city-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    }
-    .city-item input {
-    width: calc(50% - 20px);
-    }
-    .city-item select {
-    width: calc(50% - 8px);
-    }
-} */
-
-
 
 /* FOOTER STYLING */
 .footerContainer {
@@ -455,7 +437,6 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
 }
 
 @media screen and (min-width: 1024px) {
-    /* How do I get space on the top and bottom here? */
     .resourceDetailsContainer {
         display: flex;
         max-width: 75%; 
