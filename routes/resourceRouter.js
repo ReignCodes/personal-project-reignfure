@@ -11,10 +11,9 @@ router.route('/meals')
 router.route('/shelters')
     .get(resourceCtrl.all_shelters);
 
-// why does the styling on this form break when I try to make it /submit?
 router.route('/submit')
     .get(resourceCtrl.submit_resource_get)
-    .post(resourceCtrl.submit_resource_post)
+    .post(resourceCtrl.submit_resource_post);
     
 router.route('/:_id')
     .get(resourceCtrl.resource_detail)

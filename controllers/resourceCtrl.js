@@ -46,7 +46,7 @@ module.exports = {
             return error;
         } else {
             res.render('pages/resourceDetail', {
-            comic: foundResource
+            resource: foundResource
             })
         }});
     },
@@ -101,44 +101,47 @@ module.exports = {
 
     submit_resource_put: (req, res) => {
         const {_id} = req.params;
-        const {name, type, org, start_date, google_maps, coords, st_add, city, state, county, zip, country, loc_desc, opn_hrs, days, hrs, web, email, facebook, insta, linktree, frz, pantry, donations, accpts, no_accpt, dtls, img} = req.body;
+        const {name, type, org, start_date, google_maps, coords, st_add, city, state, county, zip, country, loc_desc, opn_hrs, days, hrs, web, email, facebook, insta, linktree, frz, pantry, donations, accpts, no_accpt, dtls, img, approved} = req.body;
+        console.log(req.body);
         Resource.findByIdAndUpdate(_id, {$set:{
-          name: name,
-          type: type,
-          org: org,
-          start_date: start_date,
-          google_maps: google_maps,
-          coords: coords,
-          st_add: st_add,
-          city: city,
-          state: state,
-          county: county,
-          zip: zip,
-          country: country,
-          loc_desc: loc_desc,
-          opn_hrs: opn_hrs,
-          days: days,
-          hrs: hrs,
-          web: web,
-          email: email,
-          facebook: facebook,
-          insta: insta,
-          linktree: linktree,
-          frz: frz,
-          pantry: pantry,
-          donations: donations,
-          accpts: accpts,
-          no_accpt: no_accpt,
-          dtls: dtls,
-          img: img
+            name: name,
+            type: type,
+            org: org,
+            start_date: start_date,
+            google_maps: google_maps,
+            coords: coords,
+            st_add: st_add,
+            city: city,
+            state: state,
+            county: county,
+            zip: zip,
+            country: country,
+            loc_desc: loc_desc,
+            opn_hrs: opn_hrs,
+            days: days,
+            hrs: hrs,
+            web: web,
+            email: email,
+            facebook: facebook,
+            insta: insta,
+            linktree: linktree,
+            frz: frz,
+            pantry: pantry,
+            donations: donations,
+            accpts: accpts,
+            no_accpt: no_accpt,
+            dtls: dtls,
+            img: img,
+            approved: approved
         }}, {new: true}, error => {
             if(error) {
                 return error;
             } else {
-                res.redirect("/adminConsole");
+                res.redirect("/adminConsole/resourceData");
             }
         })
     },
+
 
     delete_resource: (req, res) => {
         const {_id} = req.params;

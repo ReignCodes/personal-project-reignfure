@@ -5,6 +5,10 @@
     --light-grey: #ebebeb;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 
 body {
     background-color: var(--light-teal);
@@ -52,6 +56,10 @@ body {
     display: none;
 }
 
+.hamburger {
+    display: block;
+}
+
 .navBar a:link {
     color: white;
     text-decoration:none;
@@ -96,12 +104,6 @@ h2 {
     text-align: center;
     padding: 1rem 5rem;
     margin: 1rem;
-}
-
-
-
-.flexContentRow {
-    flex-direction: row;
 }
 
 .indexLink {
@@ -170,17 +172,25 @@ h2 {
 }
 
 .contentBox {
-    flex-wrap: wrap;
-    max-width: 20rem;
-    border-style: solid;
-    border-width: 2px;
-    background-color: #0E9594;
-    border-color: var(--orange);
-    border-radius: 1rem;
+   
 }
 
-.eachResource {
+.resourceContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 5rem;
+    margin: 1rem;
+}
+
+.resourceBox {
+    background-color: var(--dark-teal);
     max-width: 20rem;
+    text-align: center;
+   
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--orange);
 }
 
 /* TABLE STYLING */
@@ -197,6 +207,12 @@ table, th, td {
     margin: auto;
     border-collapse: collapse;
     padding: 10px;
+}
+
+.tableForm {
+    background-color: #ccc;
+    box-shadow: none;
+    padding: 0;
 }
 
 /* FORM STYLING */

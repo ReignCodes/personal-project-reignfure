@@ -33,26 +33,26 @@ module.exports = {
     },
     
     read_contact: (req, res) => {
-            const { _id } = req.params;
-            Contact.findOne({_id: _id}, (error, foundContact) => {
-                if(error) {
-                    return error; 
-                } else {
-                    res.render('pages/adminReadContact', {
-                        foundContact: foundContact
-                    });
-                }
-            });
+        const { _id } = req.params;
+        Contact.findOne({_id: _id}, (error, foundContact) => {
+             if(error) {
+                return error; 
+            } else {
+                res.render('pages/adminReadContact', {
+                    foundContact: foundContact
+                });
+            }
+        });
     },
 
 
-    create_resource: (req, res) => {
-      if (req.isAuthenticated()) {
-        res.render('pages/createResourceForm');    
-      } else {
-        res.redirect('/login');
-      }
-    },
+    // create_resource: (req, res) => {
+    //   if (req.isAuthenticated()) {
+    //     res.render('pages/createResourceForm');    
+    //   } else {
+    //     res.redirect('/login');
+    //   }
+    // },
 
     review_resource:  (req, res) => {
             const { _id } = req.params;
@@ -66,19 +66,4 @@ module.exports = {
                 }
             });
     },
-
-    // approve_resource:  (req, res) => {
-    //     const { _id } = req.params;
-    //     Resource.findOne({_id: _id}, (error, foundResource) => {
-    //         if(error) {
-    //             return error; 
-    //         } else {
-    //             res.render('pages/adminReviewResource', {
-    //                 foundResource: foundResource
-    //             });
-    //         }
-    //     });
-    // },
-
-
 }

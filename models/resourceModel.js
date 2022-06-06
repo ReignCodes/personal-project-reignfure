@@ -86,6 +86,9 @@ const resourceSchema = new Schema({
   pantry: {
     type: Boolean,
   },
+  donations: {
+    type: Boolean,
+  },
   accpts: {
     type: String
   },

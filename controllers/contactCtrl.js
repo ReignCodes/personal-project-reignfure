@@ -10,7 +10,7 @@ module.exports = {
     },
 
     contact_post: (req, res) => {
-        const {f_name, l_name, email, org, vol, msg, cntct, admin, user_name} = req.body;
+        const {f_name, l_name, email, org, vol, msg, cntct, admin, username} = req.body;
         const newContact = new Contact({
             f_name: f_name,
             l_name: l_name,
@@ -20,7 +20,7 @@ module.exports = {
             msg: msg,
             cntct: cntct,
             admin: admin,
-            user_name: user_name
+            username: username
         });
         newContact.save();
         if (f_name != "") {
@@ -33,7 +33,7 @@ module.exports = {
 
     contact_put: (req, res) => {
         const {_id} = req.params;
-        const {f_name, l_name, email, org, vol, msg, cntct, admin, user_name} = req.body;
+        const {f_name, l_name, email, org, vol, msg, cntct, admin, username} = req.body;
         Contact.findByIdAndUpdate(_id, {$set:{
             f_name: f_name,
             l_name: l_name,
@@ -43,12 +43,12 @@ module.exports = {
             msg: msg,
             cntct: cntct,
             admin: admin,
-            user_name: user_name
+            username: username
         }}, {new: true}, error => {
             if(error) {
                 return error;
             } else {
-                red.redirect("/contactInbox");
+                res.redirect("/adminConsole/contactInbox");
             }
         });
 

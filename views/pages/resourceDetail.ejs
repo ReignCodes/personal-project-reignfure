@@ -1,37 +1,37 @@
 <%- include('../partials/header') -%> 
 <%- include('../partials/nav') -%>
-<div class="container">
-    <div class="contentContainer">
-    <h1>Resource Details</h1>
-    <div class="containerImage">
+<main>
+    <div class="container">
+        <div class="contentContainer">
+            <h1>Resource Details</h1>
+            <div class="containerText">
+                <div class="resourceInfo">
+                    <p>Name: <%= resource.name %></p>
+                    <p>Type: <%= resource.type %></p>
+                    <p>Organization: <%= resource.org %></p>
+                    <h2>social media</h2>
+                    <p><a href="<%= resource.web %>">Website</a></p>
+                    <p>Facebook:<%= resource.facebook %></p>
+                    <p>Instagram:<%= resource.insta %></p>
+                    <p>Linktree:<%= resource.linktree %></p>
+                    <h2>resource details</h2>
+                    <p>Start Date: <%= resource.start_date %></p>
+                    <p><a href="<%= resource.google_maps %>">Take Me There!(Google Maps)</a></p>
+                    <p><%= resource.st_add %></p>
+                    <p><%= resource.city %>, <%= resource.state %> <%= resource.zip %> <%= resource.country %></p>
+                    <p>Location Description: <%= resource.loc_desc %></p>
+                    <p>open 24 hours? <%= resource.opn_hrs %></p>
+                    <p>Days: <%= resource.days %></p>
+                    <p>Hours: <%= resource.hrs %></p>
+                    <p>Freezer: <%= resource.frz %></p>
+                    <p>Pantry: <%= resource.pantry %></p>
+                    <p>Accepts: <%= resource.accpts %></p>
+                    <p>Does Not Accept:<%= resource.no_accpt %></p>
+                    <p>Details: <%= resource.details %></p>
+                </div>
+            </div>  
+        </div>
     </div>
-    <div class="containerText">
-        <div class="resourceInfo">
-            <p>Name: <%= resource.name %></p>
-            <p>Type: <%= resource.type %></p>
-            <p>Organization: <%= resource.org %></p>
-            <h2>social media</h2>
-            <p><a href="<%= resource.web %>">Website</a></p>
-            <p>Facebook:<%= resource.facebook %></p>
-            <p>Instagram:<%= resource.insta %></p>
-            <p>Linktree:<%= resource.linktree %></p>
-            <h2>resource details</h2>
-            <p>Start Date: <%= resource.start_date %></p>
-            <p><a href="<%= resource.google_maps %>">Take Me There!(Google Maps)</a></p>
-            <p><%= resource.st_add %></p>
-            <p><%= resource.city %>, <%= resource.state %> <%= resource.zip %> <%= resource.country %></p>
-            <p>Location Description: <%= resource.loc_desc %></p>
-            <p>open 24 hours? <%= resource.opn_hrs %></p>
-            <p>Days: <%= resource.days %></p>
-            <p>Hours: <%= resource.hrs %></p>
-            <p>Freezer: <%= resource.frz %></p>
-            <p>Pantry: <%= resource.pantry %></p>
-            <p>Accepts: <%= resource.accpts %></p>
-            <p>Does Not Accept:<%= resource.no_accpt %></p>
-            <p>Details: <%= resource.details %></p>
-    </div>
-</div>  
-</div>
-</div>
+</main>
 
 <%- include('../partials/footer') -%>
