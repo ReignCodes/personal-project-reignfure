@@ -174,15 +174,17 @@ h2 {
 .resourceContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 2rem;
     padding: 1rem 5rem;
     margin: 1rem;
 }
 
 .resourceBox {
-    background-color: var(--dark-teal);
-    max-width: 20rem;
+    background-color:var(--light-teal);
+    max-width: 15rem;
+    min-width: 15rem;
     text-align: center;
-   
     border-radius: 1rem;
     border-style: solid;
     border-width: 2px;
