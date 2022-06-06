@@ -22,18 +22,20 @@
             <label for="org">Organization:</label>
             <input type="text" id="org" name="org" placeholder="Your organization..">
           </div>
-          <div class="formItem">
+          <div class="question">
             <label for="vol">Do you want to volunteer as an admin for this app?</label><span class="required">*</span>
+            <div class="question-answer">
             <input type="radio" value=1 id="yesVol" name="vol" required/>
             <label for="yesVol" class="radio"><span>Yes</span></label>
             <input type="radio" value=0 id="noVol" name="vol" required/>
             <label for="noVol" class="radio"><span>No</span></label>
+            </div>
           </div>
           <div class="formItem">
             <label for="subject">Message:</label>
             <textarea class="formTextBox" id="msg" name="msg" placeholder="What do you want us to know?"></textarea>
           </div>
-          <button class="formSubmitBtn" type="submit" value="Submit">Submit!</button>
+          <input class="formSubmitBtn" type="submit" value="Submit"/>
         </form>
       </div>
   </div> 

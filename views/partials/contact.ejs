@@ -5,8 +5,9 @@
     <td><%= contact.vol %> </td>
     <td><%= contact.cntct %></td>
     <td><%= contact.admin %></td>
+    <td><%= contact.username %></td>
     <td>
-        <button class="review-button"><a href="adminConsole/contact/<%= contact._id %>">Read</a></button>
+        <button class="review-button"><a href="/adminConsole/contact/<%= contact._id %>">Read</a></button>
     </td>
     <td>
         <form action="/contact/<%= contact._id %>?_method=DELETE" method="POST">

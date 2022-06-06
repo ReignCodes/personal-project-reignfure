@@ -15,7 +15,7 @@ const resourceSchema = new Schema({
     type: String,
   },
   start_date: {
-    type: Date,
+    type: String,
   },
   google_maps: {
     type: String
@@ -43,7 +43,7 @@ const resourceSchema = new Schema({
     type: String,
   },
   zip: {
-    type: Number,
+    type: String,
     // required: [true, 'The zip code is required.'],
     // minlength:[5,'Minimun length for the zip code is 5 characters.']
   },
@@ -86,12 +86,12 @@ const resourceSchema = new Schema({
   pantry: {
     type: Boolean,
   },
-  // accpts: {
-  //   type: String
-  // },
-  // no_accpt: {
-  //   type: String
-  // },
+  accpts: {
+    type: String
+  },
+  no_accpt: {
+    type: String
+  },
   dtls: {
     type: String
   },

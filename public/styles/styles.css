@@ -20,11 +20,11 @@ body {
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
+    align-items: center;
     min-width: 60%;
     max-width: 75%;
-    padding-top: 2%;
+    padding-top: 2rem;
+    padding-left: 3rem;
     
 }
 
@@ -98,8 +98,41 @@ h2 {
     margin: 1rem;
 }
 
+
+
 .flexContentRow {
     flex-direction: row;
+}
+
+.indexLink {
+    color: #ebebeb;
+    justify-content: center;
+    height: auto;
+    padding: 2%;
+    background-color: #0E9594;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.indexLink a:link  {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.indexLink a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.indexLink a:hover {
+    color:aquamarine;
+    font-style: bold;
+}
+
+.indexLink a:focus {
+    color: var(--orange);
 }
 
 .indexPhoto {
@@ -110,8 +143,61 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.adminContent {
+    flex-direction: row;
+    background-color: var(--light-grey);
+    border-style: double;
+    border-color: #f2542d;
+    border-radius: 1rem;
+    margin: 1rem;
+}
 
+.pageLink {
+    text-decoration: none;
+}
 
+.mainTextSection {
+    font-size: 1.3rem;
+}
+
+.textSection h2 {
+    color:#093c3d;
+}
+
+.dropDownInfo {
+    display: none;
+    background-color: #0E9594;
+}
+
+.contentBox {
+    flex-wrap: wrap;
+    max-width: 20rem;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #0E9594;
+    border-color: var(--orange);
+    border-radius: 1rem;
+}
+
+.eachResource {
+    max-width: 20rem;
+}
+
+/* TABLE STYLING */
+
+.tableContainer {
+    overflow-x: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+table, th, td {
+    border-style: solid;
+    border-color: var(--orange);
+    margin: auto;
+    border-collapse: collapse;
+    padding: 10px;
+}
 
 /* FORM STYLING */
 .formContainer {
@@ -280,12 +366,13 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
 .footerContainer {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     background-color: var(--dark-teal);
     border-radius: 1rem;
     color: white;
     margin-top: 2rem;
     padding: 1rem;
+    flex-direction: column;
 }
 
 .footerLinkBlock {
@@ -313,3 +400,48 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
     color: var(--orange);
 }
 
+.footerLogo {
+    padding: 1.2rem 0rem;
+}
+
+@media screen and (min-width: 769px) {
+
+    .hamburger {
+        visibility: hidden;
+    }
+
+    .contentBox {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: fit-content;
+    }
+
+    .mainTextSection {
+        font-size: 1.6rem;
+    }
+
+    .indexLink {
+        margin-bottom: 2rem;
+        margin-right: 10rem;
+        margin-left: 10rem;
+    }
+
+    .eachResource {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+  
+    .footerContainer {
+        flex-direction: row;
+    }
+
+   
+}
+
+@media screen and (min-width: 1024px) {
+    /* How do I get space on the top and bottom here? */
+    .resourceDetailsContainer {
+        display: flex;
+        max-width: 75%; 
+    }
+}

@@ -1,34 +1,37 @@
 <%- include('../partials/header') -%> 
-<div class="contentContainerContainer">
+<%- include('../partials/nav') -%>
+<div class="container">
+    <div class="contentContainer">
     <h1>Resource Details</h1>
     <div class="containerImage">
-    <img class="resourceImage" src="/images/<%= resource.image %>"  width="400px" />
     </div>
     <div class="containerText">
         <div class="resourceInfo">
             <p>Name: <%= resource.name %></p>
             <p>Type: <%= resource.type %></p>
-            <p>Organization: <%= resource.organization %></p>
+            <p>Organization: <%= resource.org %></p>
             <h2>social media</h2>
-            <p>Website:<%= resource.website %></p>
+            <p><a href="<%= resource.web %>">Website</a></p>
             <p>Facebook:<%= resource.facebook %></p>
-            <p>Instagram:<%= resource.instagram %></p>
+            <p>Instagram:<%= resource.insta %></p>
             <p>Linktree:<%= resource.linktree %></p>
             <h2>resource details</h2>
             <p>Start Date: <%= resource.start_date %></p>
-            <p>Google Maps Link: <%= resource.google_maps %></p>
-            <p><%= resource.street_address %></p>
+            <p><a href="<%= resource.google_maps %>">Take Me There!(Google Maps)</a></p>
+            <p><%= resource.st_add %></p>
             <p><%= resource.city %>, <%= resource.state %> <%= resource.zip %> <%= resource.country %></p>
-            <p>Location Description: <%= resource.loc_description %></p>
-            <p>open 24 hours? <%= resource.openHours %></p>
+            <p>Location Description: <%= resource.loc_desc %></p>
+            <p>open 24 hours? <%= resource.opn_hrs %></p>
             <p>Days: <%= resource.days %></p>
-            <p>Hours: <%= resource.hours %></p>
-            <p>Freezer: <%= resource.freezer %></p>
+            <p>Hours: <%= resource.hrs %></p>
+            <p>Freezer: <%= resource.frz %></p>
             <p>Pantry: <%= resource.pantry %></p>
-            <p>accpts: <%= resource.accpts %></p>
+            <p>Accepts: <%= resource.accpts %></p>
             <p>Does Not Accept:<%= resource.no_accpt %></p>
             <p>Details: <%= resource.details %></p>
     </div>
 </div>  
-<%- include('../partials/nav') -%>
+</div>
+</div>
+
 <%- include('../partials/footer') -%>

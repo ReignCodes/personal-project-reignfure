@@ -3,7 +3,7 @@ const Resource = require('../models/resourceModel');
 module.exports = {
 
     all_fridges: (req, res) => {
-    Resource.find({type: "Micro Pantry (no fridge)" || "Community Fridge & Pantry" || "Food Bank Pick-up"},{approved: true}, (error, allResources) => {
+    Resource.find({type: "Fridge & Pantry"}, (error, allResources) => {
         if(error) {
             return error;
         } else {
@@ -11,12 +11,11 @@ module.exports = {
                 resources: allResources
             });    
         }
-        console.log(resources);
     });
     },
 
     all_meals: (req, res) => {
-        Resource.find({type: "Prepared Meal Pick-up" || "Sit-down warm meal"}, {approved: true}, (error, allResources) => {
+        Resource.find({type: "Prepared Meal Pick-up" && "Sit-down warm meal"}, {approved: true}, (error, allResources) => {
             if(error) {
                 return error;
             } else {
@@ -24,7 +23,6 @@ module.exports = {
                     resources: allResources
                 });    
             }
-            console.log(resources);
         });
         },
 
@@ -37,7 +35,6 @@ module.exports = {
                     resources: allResources
                 });    
             }
-            console.log(resources);
         });
         },
 
@@ -104,7 +101,7 @@ module.exports = {
 
     submit_resource_put: (req, res) => {
         const {_id} = req.params;
-        const {name, type, org, start_date, google_maps, coords, st_add, city, state, county, zip, country, loc_desc, opn_hrs, hrs, days, web, email, facebook, insta, linktree, frz, pantry, donations, accpts, no_accpt, dtls, img} = req.body;
+        const {name, type, org, start_date, google_maps, coords, st_add, city, state, county, zip, country, loc_desc, opn_hrs, days, hrs, web, email, facebook, insta, linktree, frz, pantry, donations, accpts, no_accpt, dtls, img} = req.body;
         Resource.findByIdAndUpdate(_id, {$set:{
           name: name,
           type: type,
@@ -117,7 +114,6 @@ module.exports = {
           state: state,
           county: county,
           zip: zip,
-          county: county,
           country: country,
           loc_desc: loc_desc,
           opn_hrs: opn_hrs,
@@ -150,7 +146,7 @@ module.exports = {
           if(error) {
             return error;
           } else {
-            res.redirect("/adminConsole")
+            res.redirect("/adminConsole/resourceData")
           }
         });
       }

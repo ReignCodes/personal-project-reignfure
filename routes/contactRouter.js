@@ -7,5 +7,6 @@ router.route('/')
     .post(contactCtrl.contact_post);
 
 router.route('/:_id')
-    // put and delete
+    .put(contactCtrl.contact_put)
+    .delete(contactCtrl.contact_delete)
 module.exports = router;

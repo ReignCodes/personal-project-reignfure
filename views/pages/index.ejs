@@ -1,34 +1,47 @@
 <%- include('../partials/header') -%> 
     
 <%- include('../partials/nav') -%>
+<main>
      <div class="container">
         <h1>The Fridge Project</h1>
         <div class="contentContainer">
             <div class="mainTextContainer">
                 <div class="mainTextSection">
-                <p> At The Fridge Project we aim to make it easier for people to find the community resources available to them.  Here we want to help build a community around mutual aid.  A place where people can find and add places for people in need to find free food, meals, and other kinds of help.  </p>
+                    <p> At The Fridge Project we aim to make it easier for people to find the community resources available to them.  Here we want to help build a community around mutual aid.  A place where people can find and add places for people in need to find free food, meals, and other kinds of help.  </p>
                 </div>
-                <div class="textSection">
                 <h1>What are you looking for?</h1>
                 <div class="textSection">
-                <a href="resource/fridges" class="pageLink"><h2>Fridges & Pantries</h2></a>
-                    <p class="dropDownInfo">Here we list local fridges and pantries as well as allow people to update when they were last filled/if they need food</p>
+                    <div class="indexLink">
+                        <a href="/resource/fridges" class="pageLink">Fridges & Pantries</a>
+                    </div>
+                    <p class="dropDownInfo">Here we list local fridges and pantries</p>
                 </div>
                 <div class="textSection">
-                    <a href="#" class="pageLink"><h2>Food Banks, Soup Kitchens, and Prepared Meals</h2></a>
+                    <div class="indexLink">
+                        <a href="/resource/meals">Food Banks, Soup Kitchens, and Prepared Meals</a>
+                    </div>
                     <p class="dropDownInfo">Here we list local places that provide home made meals for take away or dining on site as well as local food banks</p>
                 </div>
-                <div href="#" class="textSection">
-                    <a class="pageLink"><h2>Warming Centers and Shelters</h2></a>
+                <div class="textSection">
+                    <div class="indexLink">
+                        <a href="/resource/shelters">Warming Centers and Shelters</a>
+                    </div>
                     <p class="dropDownInfo">Here we provide locations, contact info, and other details for local warming centers and shelters</p>
                 </div>
                 <div class="textSection">
-                    <p>Feel like we are missing something?</p>
-                    <a class="pageLink" href="/resource/submit"><h2>submit a resource!</h2></a>
-                    <p>Want to volunteer as an admin for this page?</p>
-                    <a class="pageLink" href="/contact"><h2>contact us!<h2></a>
+                    <h2>Feel like we are missing something?</h2>
+                    <div class="indexLink">
+                        <a href="/resource/submit">submit a resource!</a>
+                    </div>
+                </div>
+                <div class="textSection">
+                    <h2>Want to volunteer as an admin for this page?</h2>
+                    <div class="indexLink">
+                        <a href="/contact">contact us!</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</main>
     <%- include('../partials/footer') -%>

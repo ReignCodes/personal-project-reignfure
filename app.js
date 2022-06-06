@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const response = require('express/lib/response');
 const morgan = require('morgan');
 const path = require('path');
 const methodOverride = require('method-override');

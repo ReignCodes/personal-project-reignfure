@@ -4,27 +4,34 @@ const Contact = require('../models/contactModel');
 
 module.exports = {
     admin: (req, res) => {
-        res.render('pages/adminConsole')
+        res.render('pages/adminConsole');     
+    },
+
+    resource_data: (req, res) => {
         Resource.find({}, (error, allResources) => {
             if(error) {
                 return error;
             } else {
-                res.render('pages/adminConsole', {
+                res.render('pages/resourceData', {
                     resources: allResources
                 });    
             }
-            console.log(resources);
         });
+    },
+
+    contact_inbox: (req, res) => {
         Contact.find({}, (error, allContacts) => {
             if(error) {
                 return error;
             } else {
-                res.render('pages/adminConsole', {
+                console.log(allContacts);
+                res.render('pages/contactInbox', {
                     contacts: allContacts
                 });    
             }
         });
     },
+    
     read_contact: (req, res) => {
             const { _id } = req.params;
             Contact.findOne({_id: _id}, (error, foundContact) => {
@@ -59,4 +66,19 @@ module.exports = {
                 }
             });
     },
+
+    // approve_resource:  (req, res) => {
+    //     const { _id } = req.params;
+    //     Resource.findOne({_id: _id}, (error, foundResource) => {
+    //         if(error) {
+    //             return error; 
+    //         } else {
+    //             res.render('pages/adminReviewResource', {
+    //                 foundResource: foundResource
+    //             });
+    //         }
+    //     });
+    // },
+
+
 }

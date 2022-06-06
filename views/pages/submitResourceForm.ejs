@@ -17,7 +17,7 @@
             <label for="type">Resource Type</label><span class="required">*</span>
             <select required>
                 <option value="">What kind of resource is this?</option>
-                <option value="Community Fridge & Pantry">Community Fridge & Pantry</option>
+                <option value="Community Fridge & Pantry">Fridge & Pantry</option>
                 <option value="Micro Pantry (no fridge)">Micro Pantry (no fridge)</option>
                 <option value="Food Bank Pick-up">Food Bank Pick-up</option>
                 <option value="Prepared Meal Pick-up">Prepared Meal Pick-up</option>
@@ -41,7 +41,7 @@
             <input type="text" name="st_add" placeholder="Street address" required/>
             <div class="textInputSmall">
               <input type="text" name="city" placeholder="City" required/>
-              <input type="text" name="county" placeholder="County/Region"/>
+              <input type="text" name="state" placeholder="State"/>
               <input type="text" name="zip" placeholder="Postal / Zip code" required/>
               <select name="country" required>
                 <option value="">Country</option>
@@ -53,7 +53,7 @@
           </div>
           <div class="item">
           <label for="web">Website</label><span class="required">*</span></p>
-            <input type="url" name="web" placeholder="Provide url for resource" required/>
+            <input type="text" name="web" placeholder="Provide website for resource" required/>
           </div>
           <div class="item">
             <label for="facebook">Facebook <i class="fab fa-facebook-f"></i></label>
@@ -90,6 +90,14 @@
               <label for="yesDonations" class="radio"><span>Yes</span></label>
               <input type="radio" value=0 id="noDonations" name="donations" required/>
               <label for="noDonations" class="radio"><span>No</span></label>
+            </div>
+            <div class="item">
+              <label for="accpts">What items does this resource accept?</label>
+              <input type="text" name="accpts"/>
+            </div>
+            <div class="item">
+              <label for="no_accpt">What items does this resource NOT accept?</label>
+              <input type="text" name="no_accpt"/>
             </div>
           </div>
           <!-- MAYBE DO THIS IN THE SCHEMA -->
@@ -137,8 +145,8 @@
                 <label for="check_9" class="check"><span>Clothing</span></label>
               </div>
             </div>
-          </div> -->
-            <!-- <div class="question">
+          </div>
+            <div class="question">
                 <p>What kind of donations does this resource NOT accept?<span class="required">*</span></p>
                 <div class="question-answer checkbox-item">
                   <div>
@@ -162,15 +170,15 @@
                     <label for="check_14" class="check"><span>Clothing</span></label>
                   </div>    
                 </div>
-            </div>  -->
-            <input class="formSubmitBtn" type="submit" value="submit"/>
+            </div> --> 
+            <input class="formSubmitBtn" type="submit" value="Submit"/>
         </form>
       </div>
         
-        <!-- two forms on same page with different action -->
+        
         <!-- this should go CONTACTMODEL and populate in the admin console -->
         <!-- is this the right action/ -->
-        <div class="formContainer">
+        <!-- <div class="formContainer">
           <form action="/contact" method="POST">
             <div class="question">
               <label for='vol'>Do you want to volunteer as an admin for this app?</label></span>
@@ -195,6 +203,6 @@
             </div>
             <input class="formSubmitBtn" type="submit" value="submit"/>
           </form>
-        </div>
+        </div> -->
 </main>
     <%- include('../partials/footer') -%>

@@ -5,6 +5,12 @@ const adminCtrl = require('../controllers/adminCtrl');
 router.route('/')
     .get(adminCtrl.admin);
 
+router.route('/resourceData')
+    .get(adminCtrl.resource_data);
+
+router.route('/contactInbox')
+    .get(adminCtrl.contact_inbox);
+
 router.route('/createResource')
     .get(adminCtrl.create_resource);
 

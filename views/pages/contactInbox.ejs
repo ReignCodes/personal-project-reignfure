@@ -1,0 +1,32 @@
+<%- include('../partials/header') %> 
+
+<%- include('../partials/adminNav') %>
+<main>
+    <div class="container">
+        <div class="contentContainer">
+            <h1>Admin Console</h1>
+    
+        <div class="tableContainer">
+            <table class="tablecontentContainer">
+                <thead>
+                    <h2>Contact Inbox</h2>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Volunteer</th>
+                    <th>Contacted</th>
+                    <th>Admin</th>
+                    <th>Username</th>
+                    <th>Read</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <%- include('../partials/contact', {contacts:contacts}) %>
+                </tbody>
+           </table>
+        </div>
+       </div>
+    </div>
+</main>
+<%- include('../partials/footer') %>
