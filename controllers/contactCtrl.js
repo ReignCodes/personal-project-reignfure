@@ -24,7 +24,7 @@ module.exports = {
         });
         newContact.save();
         if (f_name != "") {
-            res.redirect("/");
+            res.redirect("/contactThankYou");
         } else {
             res.redirect("/contactForm")
         }

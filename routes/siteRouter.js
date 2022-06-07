@@ -18,4 +18,7 @@ router.route('/logout')
 router.route('/thankYou')
     .get(siteCtrl.thank_you);
 
+router.route('/contactThankYou')
+    .get(siteCtrl.contact_thank_you);
+
 module.exports = router

@@ -14,6 +14,10 @@ module.exports = {
         res.render('pages/thankYou');
     },
 
+    contact_thank_you: (req, res) => {
+        res.render('pages/contactThankYou');
+    },
+
     login: (req, res) => {
         res.render('pages/login');    
     },
