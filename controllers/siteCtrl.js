@@ -15,6 +15,7 @@ module.exports = {
     },
         
     login_post: (req, res) => {
+        const {username, password} = req.body;
         const user = new User({
             username: username,
             password: password

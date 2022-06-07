@@ -181,7 +181,7 @@ h2 {
 }
 
 .resourceBox {
-    background-color:var(--light-teal);
+    background-color: #127475;
     max-width: 15rem;
     min-width: 15rem;
     text-align: center;
@@ -190,7 +190,13 @@ h2 {
     border-width: 2px;
     border-color: var(--orange);
 }
-
+ .insideBox {
+     background-color: #ebebeb;
+     opacity: 70%;
+     margin: 1rem;
+     padding: .25rem;
+     border-radius: 1rem;
+ }
 /* TABLE STYLING */
 
 .tableContainer {

@@ -65,7 +65,7 @@
             <label for="email">Email</label>
             <input type="email" name="email" value="<%= foundResource.email %>"/>
           </div>
-          <div class="question">
+          <!-- <div class="question">
             <label for="opn_hrs">Is this resource open 24/7?</label><span class="required">*</span></p>
             <div class="question-answer">
               <input type="radio" value="<%= foundResource.opn_hrs %>" id="open24" name="opn_hrs"/>
@@ -73,15 +73,15 @@
               <input type="radio" value="<%= foundResource.opn_hrs %>" id="notOpen24" name="opn_hrs"/>
               <label for="notOpen24" class="radio"><span>No</span></label>
             </div>
-          </div>
+          </div> -->
           <div class="item">
-            <label for='days'>If No, please list the Hours of Operation below:</label>
+            <label for='days'>Please list the Hours of Operation below:</label>
             <div class="textInputSmall">
               <input type="text" name="days" value="<%= foundResource.days %>">
               <input type="text" name="hrs" value="<%= foundResource.hrs %>">
             </div>
           </div>
-          <div class="question">
+          <!-- <div class="question">
             <label for='donations'>Does this resource accept donations?</label><span class="required">*</span>
             <div class="question-answer">
               <input type="radio" id="yesDonations" name="donations" value="<%= foundResource.donations %>"/>
@@ -89,7 +89,7 @@
               <input type="radio" id="noDonations" name="donations" value="<%= foundResource.opn_hrs %>"/>
               <label for="noDonations" class="radio"><span>No</span></label>
             </div>
-          </div>
+          </div> -->
           <div class="item">
             <label for="accpts">What kind of donations does this resource accept?</label>
             <input type="text" name="accpts" value="<%= foundResource.accpts %>"/>

@@ -7,12 +7,14 @@
             <div class="resourceContainer">
             <% for (resource of resources) {%>
             <div class="resourceBox">
+                <div class="insideBox">
                 <p><span class="resource_name"> <%= resource.name %></span></p>
                 <p><%= resource.city %>, <%= resource.state %></p>
                 <p><a href="<%= resource.google_maps %>" target="_blank">Google Directions</a></p>
                 <p><%= resource.type %></p>
-                <p><a href="<%= resource.web %>">Find them online!</a></p>
+                <p><a href="<%= resource.web %>" target="_blank">Find them online!</a></p>
                 <a class="details_link" href="/resource/<%= resource._id %>">More Info...</a> 
+                </div>
             </div> 
             <% } %>
             </div>
