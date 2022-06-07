@@ -1,9 +1,9 @@
-// const hamburgerMenuIcon = document.querySelector('.fa');
+const hamburgerMenuIcon = document.querySelector('.hamburger');
 
-// const menuItems = document.querySelector('.navbar');
+const menu = document.querySelector('.hamburgerMenu');
 
-// const toggleMenu = function() {
-//     menuItems.classList.toggle('open');  
-// }
+const toggleMenu = function() {
+    menu.classList.toggle('open');  
+}
 
-// hamburgerMenuIcon.addEventListener('click', toggleMenu);
+hamburgerMenuIcon.addEventListener('click', toggleMenu);
