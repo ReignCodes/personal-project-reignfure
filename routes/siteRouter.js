@@ -15,4 +15,7 @@ router.route('/login')
 router.route('/logout')
     .get(siteCtrl.logout);
 
+router.route('/thankYou')
+    .get(siteCtrl.thank_you);
+
 module.exports = router

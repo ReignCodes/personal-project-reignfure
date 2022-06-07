@@ -3,7 +3,7 @@ const Resource = require('../models/resourceModel');
 module.exports = {
 
     all_fridges: (req, res) => {
-    Resource.find({type: "Fridge & Pantry"}, (error, allResources) => {
+    Resource.find({type: "Fridge & Pantry", approved: true}, (error, allResources) => {
         if(error) {
             return error;
         } else {
@@ -15,11 +15,11 @@ module.exports = {
     },
 
     all_meals: (req, res) => {
-        Resource.find({type: "Prepared Meal Pick-up" || "Sit-down warm meal", approved: true}, (error, allResources) => {
+        Resource.find({type: ["Prepared Meal Pick-up", "Sit-down warm meal"], approved: true}, (error, allResources) => {
             if(error) {
                 return error;
             } else {
-                res.render('pages/allFridges', {
+                res.render('pages/allMeals', {
                     resources: allResources
                 });    
             }
@@ -27,11 +27,11 @@ module.exports = {
         },
 
     all_shelters: (req, res) => {
-        Resource.find({type: "Warming Center" || "Shelter"}, {approved: true}, (error, allResources) => {
+        Resource.find({type: ["Shelter", "Warming Center"], approved: true}, (error, allResources) => {
             if(error) {
                 return error;
             } else {
-                res.render('pages/allFridges', {
+                res.render('pages/allShelters', {
                     resources: allResources
                 });    
             }
@@ -93,9 +93,9 @@ module.exports = {
 
         newResource.save();
         if (name != "") {
-            res.redirect("/"); 
+            res.redirect("/thankYou"); 
         } else {
-            res.redirect("/resource");
+            res.redirect("/submit");
         };
     },
 

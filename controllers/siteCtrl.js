@@ -10,6 +10,10 @@ module.exports = {
         res.render('pages/about');    
     },
 
+    thank_you: (req, res) => {
+        res.render('pages/thankYou');
+    },
+
     login: (req, res) => {
         res.render('pages/login');    
     },

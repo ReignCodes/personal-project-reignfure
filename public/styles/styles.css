@@ -41,6 +41,14 @@ body {
     padding: 0 1rem;
 }
 
+.headerLinksHide {
+    display: none
+}
+
+.hamburger {
+    padding-top: .7rem;
+}
+
 
 .dropBtn {
     font-size: 1.5rem;
@@ -54,10 +62,6 @@ body {
 
 .dropdownLinksHidden {
     display: none;
-}
-
-.hamburger {
-    display: block;
 }
 
 .navBar a:link {
@@ -106,6 +110,22 @@ h2 {
     margin: 1rem;
 }
 
+.adminContentContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 5rem;
+    margin: 1rem;
+}
+
+.adminContent {
+    background-color: var(--light-grey);
+    border-style: double;
+    border-color: #f2542d;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
 .indexLink {
     color: #ebebeb;
     justify-content: center;
@@ -143,15 +163,6 @@ h2 {
     border-color: var(--orange);
     border-radius: 1rem;
     margin-bottom: 1rem;
-}
-
-.adminContent {
-    flex-direction: row;
-    background-color: var(--light-grey);
-    border-style: double;
-    border-color: #f2542d;
-    border-radius: 1rem;
-    margin: 1rem;
 }
 
 .pageLink {
@@ -411,6 +422,20 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
 }
 
 @media screen and (min-width: 769px) {
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 1.5rem;
+        height: auto;
+        text-transform: uppercase;
+        padding: 0 1rem;
+    }
+
+    .headerLinksHide {
+        display: flex;
+        justify-content: space-around;
+    }
 
     .hamburger {
         visibility: hidden;
@@ -448,5 +473,20 @@ input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:af
     .resourceDetailsContainer {
         display: flex;
         max-width: 75%; 
+    }
+
+    .adminContentContainer {
+        flex-direction: row;
+        justify-content: center;
+        
+        
+    }
+
+    .adminContent {
+       height: 10rem;
+       width: 15rem;
+       font-size: 1.5rem;
+       padding: .5rem;
+       
     }
 }
