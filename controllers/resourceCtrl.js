@@ -15,7 +15,7 @@ module.exports = {
     },
 
     all_meals: (req, res) => {
-        Resource.find({type: "Prepared Meal Pick-up" && "Sit-down warm meal"}, {approved: true}, (error, allResources) => {
+        Resource.find({type: "Prepared Meal Pick-up" || "Sit-down warm meal", approved: true}, (error, allResources) => {
             if(error) {
                 return error;
             } else {
